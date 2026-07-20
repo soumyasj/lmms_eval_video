@@ -1,0 +1,16 @@
+python -m lmms_eval \
+  --model vllm \
+  --model_args model=Qwen/Qwen2.5-VL-7B-Instruct,max_pixels=602112,max_model_len=32768,gpu_memory_utilization=0.9,max_num_seqs=8,nframes=4,max_frame_num=4,limit_mm_per_prompt={\"video\":1} \
+  --tasks videomme \
+  --batch_size 1 \
+  --log_samples \
+  --log_samples_suffix qwen25vl_4frames_run1_mseq8 \
+  --output_path ./logs/videomme_subset
+
+python -m lmms_eval \
+  --model qwen2_5_vl \
+  --model_args pretrained=Qwen/Qwen2.5-VL-7B-Instruct,max_pixels=602112,max_num_frames=4 \
+  --tasks videomme \
+  --batch_size 1 \
+  --log_samples \
+  --output_path ./logs/videomme/subset200_hf

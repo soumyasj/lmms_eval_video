@@ -1,5 +1,13 @@
+# --- Original config (full dataset from HF hub) ---
 dataset_path: lmms-lab/Video-MME
+# --- Subset config (local 200-entry parquet) ---
+dataset_path: parquet
 dataset_kwargs:
+  # data_files is only used by the local `parquet` builder above.
+  # Comment it out (and switch dataset_path back to lmms-lab/Video-MME) to use the full dataset.
+  # data_files:
+  #   # test: /mnt/lustre/work/kuehne/kqr828/WorkSpace/MMEvals/lmms-eval/random_debug/videomme_subset_200.parquet #random 200 entries
+  #   test: /mnt/lustre/work/kuehne/kqr828/WorkSpace/MMEvals/lmms-eval/random_debug/videomme_subset_duration.parquet #9 entries with different durations
   token: True
   cache_dir: videomme
   video: True

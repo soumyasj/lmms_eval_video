@@ -139,6 +139,9 @@ tui = [
 video = [
     "torchcodec>=0.3.0",
 ]
+vllm = [
+    "vllm>=0.11.0",
+]
 video-legacy = [
     "decord; platform_system != 'Darwin'",
     "eva-decord; platform_system == 'Darwin' and python_version < '3.12'",
@@ -152,6 +155,7 @@ all = [
     "lmms_eval[mmsearch]",
     "lmms_eval[tui]",
     "lmms_eval[video]",
+    "lmms_eval[vllm]",
 ]
 
 [tool.setuptools.package-data]

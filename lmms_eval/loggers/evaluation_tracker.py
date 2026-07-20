@@ -117,6 +117,7 @@ class EvaluationTracker:
         leaderboard_url: str = "",
         point_of_contact: str = "",
         gated: bool = False,
+        filename_prefix: str = "",
     ) -> None:
         """
         Creates all the necessary loggers for evaluation tracking.
@@ -134,10 +135,12 @@ class EvaluationTracker:
             leaderboard_url (str): URL to the leaderboard on the Hugging Face hub on the dataset card.
             point_of_contact (str): Contact information on the Hugging Face hub dataset card.
             gated (bool): Whether to gate the repository.
+            filename_prefix (str): Optional prefix prepended to the saved results/samples filenames.
         """
         self.general_config_tracker = GeneralConfigTracker()
 
         self.output_path = output_path
+        self.filename_prefix = f"{filename_prefix}_" if filename_prefix else ""
         self.push_results_to_hub = push_results_to_hub
         self.push_samples_to_hub = push_samples_to_hub
         self.public_repo = public_repo
@@ -208,7 +211,7 @@ class EvaluationTracker:
                 path.mkdir(parents=True, exist_ok=True)
 
                 self.date_id = datetime_str.replace(":", "-")
-                file_results_aggregated = path.joinpath(f"{self.date_id}_results.json")
+                file_results_aggregated = path.joinpath(f"{self.filename_prefix}{self.date_id}_results.json")
                 file_results_aggregated.open("w", encoding="utf-8").write(dumped)
 
                 if self.api and self.push_results_to_hub:
@@ -221,10 +224,10 @@ class EvaluationTracker:
                     )
                     self.api.upload_file(
                         repo_id=repo_id,
-                        path_or_fileobj=str(path.joinpath(f"{self.date_id}_results.json")),
+                        path_or_fileobj=str(path.joinpath(f"{self.filename_prefix}{self.date_id}_results.json")),
                         path_in_repo=os.path.join(
                             self.general_config_tracker.model_name,
-                            f"{self.date_id}_results.json",
+                            f"{self.filename_prefix}{self.date_id}_results.json",
                         ),
                         repo_type="dataset",
                         commit_message=f"Adding aggregated results for {self.general_config_tracker.model_name}",
@@ -255,7 +258,7 @@ class EvaluationTracker:
                 path = path.joinpath(self.general_config_tracker.model_name_sanitized)
                 path.mkdir(parents=True, exist_ok=True)
 
-                file_results_samples = path.joinpath(f"{self.date_id}_samples_{task_name}.jsonl")
+                file_results_samples = path.joinpath(f"{self.filename_prefix}{self.date_id}_samples_{task_name}.jsonl")
 
                 for sample in samples:
                     # we first need to sanitize arguments and resps

@@ -1,0 +1,3602 @@
+[
+  {
+    "video_id":"001",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Humanity & History",
+    "url":"https:\/\/www.youtube.com\/watch?v=fFjv93ACGo8",
+    "videoID":"fFjv93ACGo8",
+    "question_id":"001-1",
+    "task_type":"Counting Problem",
+    "question":"When demonstrating the Germany modern Christmas tree is initially decorated with apples, candles and berries, which kind of the decoration has the largest number?",
+    "options":[
+      "A. Apples.",
+      "B. Candles.",
+      "C. Berries.",
+      "D. The three kinds are of the same number."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"001",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Humanity & History",
+    "url":"https:\/\/www.youtube.com\/watch?v=fFjv93ACGo8",
+    "videoID":"fFjv93ACGo8",
+    "question_id":"001-2",
+    "task_type":"Information Synopsis",
+    "question":"What is the genre of this video?",
+    "options":[
+      "A. It is a news report that introduces the history behind Christmas decorations.",
+      "B. It is a documentary on the evolution of Christmas holiday recipes.",
+      "C. It is a travel vlog exploring Christmas markets around the world.",
+      "D. It is a tutorial on DIY Christmas ornament crafting."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"001",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Humanity & History",
+    "url":"https:\/\/www.youtube.com\/watch?v=fFjv93ACGo8",
+    "videoID":"fFjv93ACGo8",
+    "question_id":"001-3",
+    "task_type":"Counting Problem",
+    "question":"How many red socks are above the fireplace at the end of this video?",
+    "options":[
+      "A. 1.",
+      "B. 4.",
+      "C. 2.",
+      "D. 3."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"002",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Humanity & History",
+    "url":"https:\/\/www.youtube.com\/watch?v=N1cdUjctpG8",
+    "videoID":"N1cdUjctpG8",
+    "question_id":"002-1",
+    "task_type":"Object Recognition",
+    "question":"Which of the following features\/items is not discussed in the video in relation to the tomb?",
+    "options":[
+      "A. Inkstone.",
+      "B. Niche.",
+      "C. Jade.",
+      "D. Sacrificial table."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"002",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Humanity & History",
+    "url":"https:\/\/www.youtube.com\/watch?v=N1cdUjctpG8",
+    "videoID":"N1cdUjctpG8",
+    "question_id":"002-2",
+    "task_type":"Action Reasoning",
+    "question":"Which of the following reasons motivated the archaeologists to excavate the tomb?",
+    "options":[
+      "A. Because it's from Ming Dynasty and of specific archaeological significance.",
+      "B. Because a new railway line will be built nearby.",
+      "C. Because there were treasures inside the tomb.",
+      "D. Highway realignment."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"002",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Humanity & History",
+    "url":"https:\/\/www.youtube.com\/watch?v=N1cdUjctpG8",
+    "videoID":"N1cdUjctpG8",
+    "question_id":"002-3",
+    "task_type":"Counting Problem",
+    "question":"How many porcelain jars were discovered in the niches located in the primary chamber of the tomb?",
+    "options":[
+      "A. 4.",
+      "B. 9.",
+      "C. 5.",
+      "D. 13."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"003",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Humanity & History",
+    "url":"https:\/\/www.youtube.com\/watch?v=HIjX8OPuf-w",
+    "videoID":"HIjX8OPuf-w",
+    "question_id":"003-1",
+    "task_type":"Counting Problem",
+    "question":"How many national flags appear in the video?",
+    "options":[
+      "A. 3.",
+      "B. 4.",
+      "C. 2.",
+      "D. 5."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"003",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Humanity & History",
+    "url":"https:\/\/www.youtube.com\/watch?v=HIjX8OPuf-w",
+    "videoID":"HIjX8OPuf-w",
+    "question_id":"003-2",
+    "task_type":"Object Recognition",
+    "question":"What is the video telling when the burger placed in the upper right corner at the end of the video first appears?",
+    "options":[
+      "A. Beef with spices came from Russia to Germany.",
+      "B. The steak began to be sandwiched between two pieces of bread.",
+      "C. Steak burgers spread throughout the United States.",
+      "D. The standardization of hamburgers."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"003",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Humanity & History",
+    "url":"https:\/\/www.youtube.com\/watch?v=HIjX8OPuf-w",
+    "videoID":"HIjX8OPuf-w",
+    "question_id":"003-3",
+    "task_type":"Object Reasoning",
+    "question":"In which country is the food featured in the video recognized worldwide?",
+    "options":[
+      "A. Mongolia.",
+      "B. Russia.",
+      "C. Germany.",
+      "D. United States."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"004",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Humanity & History",
+    "url":"https:\/\/www.youtube.com\/watch?v=HwnB8aCn8yE",
+    "videoID":"HwnB8aCn8yE",
+    "question_id":"004-1",
+    "task_type":"Temporal Perception",
+    "question":"According to the video, which of the following is considered the earliest stage of human evolution?",
+    "options":[
+      "A. Ramapithecus.",
+      "B. Dryopithecus.",
+      "C. Ardipithecus Ramidus.",
+      "D. Homo Sapiens."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"004",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Humanity & History",
+    "url":"https:\/\/www.youtube.com\/watch?v=HwnB8aCn8yE",
+    "videoID":"HwnB8aCn8yE",
+    "question_id":"004-2",
+    "task_type":"Object Recognition",
+    "question":"According to the video, in which state did human's ancestors first begin to walk on two legs?",
+    "options":[
+      "A. Dryopithecus.",
+      "B. Ramapithecus.",
+      "C. Ardipithecus Ramidus.",
+      "D. Homo Habilis."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"004",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Humanity & History",
+    "url":"https:\/\/www.youtube.com\/watch?v=HwnB8aCn8yE",
+    "videoID":"HwnB8aCn8yE",
+    "question_id":"004-3",
+    "task_type":"Object Recognition",
+    "question":"Given the information provided by the video, during which stage of human evolution did the regression of body hair occur rapidly?",
+    "options":[
+      "A. Dryopithecus.",
+      "B. Homo Sapiens.",
+      "C. Ardipithecus Ramidus.",
+      "D. Homo Sapiens Neanderthalensi."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"005",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Humanity & History",
+    "url":"https:\/\/www.youtube.com\/watch?v=24i4ncHuf6A",
+    "videoID":"24i4ncHuf6A",
+    "question_id":"005-1",
+    "task_type":"Counting Problem",
+    "question":"According to the video, how many individuals were in the car when Archduke Franz Ferdinand was assassinated?",
+    "options":[
+      "A. Three.",
+      "B. Two.",
+      "C. One.",
+      "D. Four."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"005",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Humanity & History",
+    "url":"https:\/\/www.youtube.com\/watch?v=24i4ncHuf6A",
+    "videoID":"24i4ncHuf6A",
+    "question_id":"005-2",
+    "task_type":"Action Reasoning",
+    "question":"What's the trigger that set off the war mentioned in the video?",
+    "options":[
+      "A. Militarisim.",
+      "B. The assasination of Archduke Franze Fredinand.",
+      "C. King Edward III of England's claim to the French throne.",
+      "D. Germany's blitzkrieg against Poland."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"005",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Humanity & History",
+    "url":"https:\/\/www.youtube.com\/watch?v=24i4ncHuf6A",
+    "videoID":"24i4ncHuf6A",
+    "question_id":"005-3",
+    "task_type":"Attribute Perception",
+    "question":"Which of the following options is incorrect regarding the events in Sarajevo depicted in the video?",
+    "options":[
+      "A. It was organized by the Black Hand in Serbia.",
+      "B. Ferdinand was sitting on the left side of the car.",
+      "C. Ferdinand was wearing a white hat.",
+      "D. The killer was wearing black suit."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"006",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Humanity & History",
+    "url":"https:\/\/www.youtube.com\/watch?v=40BlVzjxu-I",
+    "videoID":"40BlVzjxu-I",
+    "question_id":"006-1",
+    "task_type":"Object Reasoning",
+    "question":"What is one of the symbols of the festival that is introduced by the video?",
+    "options":[
+      "A. Turkey.",
+      "B. Moose.",
+      "C. Moon cake.",
+      "D. Shamrock."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"006",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Humanity & History",
+    "url":"https:\/\/www.youtube.com\/watch?v=40BlVzjxu-I",
+    "videoID":"40BlVzjxu-I",
+    "question_id":"006-2",
+    "task_type":"Temporal Reasoning",
+    "question":"What happened when Irish imiggrants brought the tradition of St. Patrick's Day to America?",
+    "options":[
+      "A. They began to center around drinking and celebrating the festival.",
+      "B. St. Patrick moved to America.",
+      "C. They celebrated St. Patrick's birth instead.",
+      "D. They attended the church and gather for feasts."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"006",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Humanity & History",
+    "url":"https:\/\/www.youtube.com\/watch?v=40BlVzjxu-I",
+    "videoID":"40BlVzjxu-I",
+    "question_id":"006-3",
+    "task_type":"Action Recognition",
+    "question":"What is special about the celebration in New York according to the video?",
+    "options":[
+      "A. Hosting large parades.",
+      "B. Dressing in green and dyeing the river to green.",
+      "C. Drinking a lot.",
+      "D. Planting shamrocks."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"007",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Humanity & History",
+    "url":"https:\/\/www.youtube.com\/watch?v=0ay2Qy3wBe8",
+    "videoID":"0ay2Qy3wBe8",
+    "question_id":"007-1",
+    "task_type":"Action Recognition",
+    "question":"How is the smoke generated by the man depicted in the video?",
+    "options":[
+      "A. By burning a piece of cloth.",
+      "B. By lighting a torch.",
+      "C. By smoking.",
+      "D. By lighting a bonefire."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"007",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Humanity & History",
+    "url":"https:\/\/www.youtube.com\/watch?v=0ay2Qy3wBe8",
+    "videoID":"0ay2Qy3wBe8",
+    "question_id":"007-2",
+    "task_type":"Temporal Reasoning",
+    "question":"What kind of communication is listed before Semaphore?",
+    "options":[
+      "A. Telephone.",
+      "B. Homing pigeon.",
+      "C. Telegraph.",
+      "D. Pony express."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"007",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Humanity & History",
+    "url":"https:\/\/www.youtube.com\/watch?v=0ay2Qy3wBe8",
+    "videoID":"0ay2Qy3wBe8",
+    "question_id":"007-3",
+    "task_type":"OCR Problems",
+    "question":"What is the specific sentence in the smart phone that makes the man embarrassed?",
+    "options":[
+      "A. BTW...you got something in your teeth!",
+      "B. Dude! You gotta come toBigStuf Camps!",
+      "C. Smoke Sig 2.0.",
+      "D. Last but not least."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"008",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Humanity & History",
+    "url":"https:\/\/www.youtube.com\/watch?v=_tvmjsKXTu8",
+    "videoID":"_tvmjsKXTu8",
+    "question_id":"008-1",
+    "task_type":"Attribute Perception",
+    "question":"In the video, what color pen did the author use when he wrote \"guitar\" for the second time?",
+    "options":[
+      "A. Brown.",
+      "B. Blue.",
+      "C. Black.",
+      "D. Pink."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"008",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Humanity & History",
+    "url":"https:\/\/www.youtube.com\/watch?v=_tvmjsKXTu8",
+    "videoID":"_tvmjsKXTu8",
+    "question_id":"008-2",
+    "task_type":"Counting Problem",
+    "question":"How many different guitar-shaped instruments are there in the video?",
+    "options":[
+      "A. 2.",
+      "B. 7.",
+      "C. 3.",
+      "D. 11."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"008",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Humanity & History",
+    "url":"https:\/\/www.youtube.com\/watch?v=_tvmjsKXTu8",
+    "videoID":"_tvmjsKXTu8",
+    "question_id":"008-3",
+    "task_type":"Information Synopsis",
+    "question":"What does the second half of the video show?",
+    "options":[
+      "A. An advertisement for a music software.",
+      "B. A tutorial on how to practice guitar on electronic devices.",
+      "C. The history of guitar software on electronic devices.",
+      "D. An advertisement for a tablet computer."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"009",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Humanity & History",
+    "url":"https:\/\/www.youtube.com\/watch?v=sUDY-SMREtA",
+    "videoID":"sUDY-SMREtA",
+    "question_id":"009-1",
+    "task_type":"Attribute Perception",
+    "question":"Which color of clothes is QuYuan wearing in the video?",
+    "options":[
+      "A. White.",
+      "B. Blue.",
+      "C. Brown.",
+      "D. Yellow."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"009",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Humanity & History",
+    "url":"https:\/\/www.youtube.com\/watch?v=sUDY-SMREtA",
+    "videoID":"sUDY-SMREtA",
+    "question_id":"009-2",
+    "task_type":"Attribute Perception",
+    "question":"Based on the video, which day does the festival fall on the lunar calendar?",
+    "options":[
+      "A. January 1th.",
+      "B. May 5th.",
+      "C. September 9th.",
+      "D. May 15th."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"009",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Humanity & History",
+    "url":"https:\/\/www.youtube.com\/watch?v=sUDY-SMREtA",
+    "videoID":"sUDY-SMREtA",
+    "question_id":"009-3",
+    "task_type":"Action Reasoning",
+    "question":"According to the video, which of the following is the main reason why people commemorate Qu Yuan?",
+    "options":[
+      "A. Because people love Zongzi.",
+      "B. Because he committed suicide by drowing himself in Miluo River.",
+      "C. Because he brought peace and prosperity to the state.",
+      "D. Because he was exile."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"010",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Humanity & History",
+    "url":"https:\/\/www.youtube.com\/watch?v=PSt_op3fQck",
+    "videoID":"PSt_op3fQck",
+    "question_id":"010-1",
+    "task_type":"Information Synopsis",
+    "question":"What can be learned from this video?",
+    "options":[
+      "A. The history of intercultural conflicts and disputes.",
+      "B. Quick ways to grasp the fundamentals of intercultural communication. understanding.",
+      "C. Techniques for mastering a foreign language in a short period of time.",
+      "D. Strategies for resolving international political conflicts."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"010",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Humanity & History",
+    "url":"https:\/\/www.youtube.com\/watch?v=PSt_op3fQck",
+    "videoID":"PSt_op3fQck",
+    "question_id":"010-2",
+    "task_type":"Object Recognition",
+    "question":"What is the pattern on the clothing of the staff who is behaving informally at the airline counter?",
+    "options":[
+      "A. A flower.",
+      "B. A coconut tree.",
+      "C. A flying bird.",
+      "D. None of the above."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"010",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Humanity & History",
+    "url":"https:\/\/www.youtube.com\/watch?v=PSt_op3fQck",
+    "videoID":"PSt_op3fQck",
+    "question_id":"010-3",
+    "task_type":"Object Recognition",
+    "question":"At the end of the animation, which place does not the copilot travel to?",
+    "options":[
+      "A. The White House.",
+      "B. The Big Ben.",
+      "C. The Egyptian Pyramids.",
+      "D. The Eiffel Tower."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"011",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Literature & Art",
+    "url":"https:\/\/www.youtube.com\/watch?v=OE5S-NbNsro",
+    "videoID":"OE5S-NbNsro",
+    "question_id":"011-1",
+    "task_type":"Action Reasoning",
+    "question":"What is the kind of the dance in the video?",
+    "options":[
+      "A. Hip hop.",
+      "B. Jazz.",
+      "C. Ballet.",
+      "D. Folk dance."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"011",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Literature & Art",
+    "url":"https:\/\/www.youtube.com\/watch?v=OE5S-NbNsro",
+    "videoID":"OE5S-NbNsro",
+    "question_id":"011-2",
+    "task_type":"Attribute Perception",
+    "question":"What's the color of the cosmos introduced by the video?",
+    "options":[
+      "A. White.",
+      "B. Black.",
+      "C. Navy blue.",
+      "D. Dark purple."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"011",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Literature & Art",
+    "url":"https:\/\/www.youtube.com\/watch?v=OE5S-NbNsro",
+    "videoID":"OE5S-NbNsro",
+    "question_id":"011-3",
+    "task_type":"Action Recognition",
+    "question":"What are the moves in the last scene of this dance?",
+    "options":[
+      "A. Kneel down on one knee and lean back.",
+      "B. Passe and then chasse.",
+      "C. Releve and then pirouette.",
+      "D. Passe and then Grand jete."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"012",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Literature & Art",
+    "url":"https:\/\/www.youtube.com\/watch?v=qvwfWyU9Gfc",
+    "videoID":"qvwfWyU9Gfc",
+    "question_id":"012-1",
+    "task_type":"Action Reasoning",
+    "question":"Based on the video, which of the following describes the reason why the student ate the banana?",
+    "options":[
+      "A. Because the banana looks tasty.",
+      "B. Because he considered the process of eating a banana is art.",
+      "C. Because he didn't think the  banana worth $120,000.",
+      "D. Because he wanted to followed the man who ate a banana in a exhibition in 2019."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"012",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Literature & Art",
+    "url":"https:\/\/www.youtube.com\/watch?v=qvwfWyU9Gfc",
+    "videoID":"qvwfWyU9Gfc",
+    "question_id":"012-2",
+    "task_type":"Temporal Reasoning",
+    "question":"What did the student do after eating the banana in the video?",
+    "options":[
+      "A. He ate a banana in exhibition again in 2019.",
+      "B. He throwed the skin of banana.",
+      "C. He reattached the skin of banana using the same tape.",
+      "D. The action of eating a banana was considered art."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"012",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Literature & Art",
+    "url":"https:\/\/www.youtube.com\/watch?v=qvwfWyU9Gfc",
+    "videoID":"qvwfWyU9Gfc",
+    "question_id":"012-3",
+    "task_type":"Attribute Perception",
+    "question":"What's the color of the tape in the video?",
+    "options":[
+      "A. Green.",
+      "B. Black.",
+      "C. Yellow.",
+      "D. Gray."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"013",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Literature & Art",
+    "url":"https:\/\/www.youtube.com\/watch?v=5wLv3pCqZ9o",
+    "videoID":"5wLv3pCqZ9o",
+    "question_id":"013-1",
+    "task_type":"Spatial Perception",
+    "question":"Which of the following is visible in the background of the video when the miniature bottle is shown empty?",
+    "options":[
+      "A. Water.",
+      "B. Cork.",
+      "C. Shells.",
+      "D. Star."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"013",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Literature & Art",
+    "url":"https:\/\/www.youtube.com\/watch?v=5wLv3pCqZ9o",
+    "videoID":"5wLv3pCqZ9o",
+    "question_id":"013-2",
+    "task_type":"Action Reasoning",
+    "question":"According to the video, which of the following ingredients is not used in the artwork?",
+    "options":[
+      "A. Shell.",
+      "B. Glue.",
+      "C. Blue Food Dye.",
+      "D. Oil."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"013",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Literature & Art",
+    "url":"https:\/\/www.youtube.com\/watch?v=5wLv3pCqZ9o",
+    "videoID":"5wLv3pCqZ9o",
+    "question_id":"013-3",
+    "task_type":"Action Recognition",
+    "question":"What was the next step taken by the operator after filling the bottle with oil?",
+    "options":[
+      "A. Applied glue to cork.",
+      "B. Added blue food dye.",
+      "C. Added 1\/3 water.",
+      "D. Put the cork on the bottle."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"014",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Literature & Art",
+    "url":"https:\/\/www.youtube.com\/watch?v=uqILuTcux_o",
+    "videoID":"uqILuTcux_o",
+    "question_id":"014-1",
+    "task_type":"Object Recognition",
+    "question":"Which of the following can be identified as Susan White-Oakes' most recent art piece, based on the video?",
+    "options":[
+      "A. A tiger.",
+      "B. A bird.",
+      "C. A fish.",
+      "D. A pangolin."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"014",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Literature & Art",
+    "url":"https:\/\/www.youtube.com\/watch?v=uqILuTcux_o",
+    "videoID":"uqILuTcux_o",
+    "question_id":"014-2",
+    "task_type":"Attribute Perception",
+    "question":"Based on the video, what is Susan White-Oakes' latest art work made of?",
+    "options":[
+      "A. Silver.",
+      "B. Iron.",
+      "C. Bronze.",
+      "D. Copper."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"014",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Literature & Art",
+    "url":"https:\/\/www.youtube.com\/watch?v=uqILuTcux_o",
+    "videoID":"uqILuTcux_o",
+    "question_id":"014-3",
+    "task_type":"Temporal Reasoning",
+    "question":"What does Susan White-Oakes often do before polishing the whole body?",
+    "options":[
+      "A. She sculptures the legs.",
+      "B. She attaches the copper scales to the body.",
+      "C. She decides what size the head should be.",
+      "D. She shapes the claws."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"015",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Literature & Art",
+    "url":"https:\/\/www.youtube.com\/watch?v=eXKE0nAMmg4",
+    "videoID":"eXKE0nAMmg4",
+    "question_id":"015-1",
+    "task_type":"Attribute Perception",
+    "question":"Which elements are depicted in the painting introduced by the video?",
+    "options":[
+      "A. A little girl and a red balloon.",
+      "B. A little boy and a red balloon.",
+      "C. A little girl and a blue balloon.",
+      "D. An adult and a blue balloon."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"015",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Literature & Art",
+    "url":"https:\/\/www.youtube.com\/watch?v=eXKE0nAMmg4",
+    "videoID":"eXKE0nAMmg4",
+    "question_id":"015-2",
+    "task_type":"Action Recognition",
+    "question":"Based on the video, what happened when the painting was sold?",
+    "options":[
+      "A. Someone put a shredder inside the painting.",
+      "B. The buyer was very happy because it got more worthy.",
+      "C. It disapeared.",
+      "D. It shredded into pieces."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"015",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Literature & Art",
+    "url":"https:\/\/www.youtube.com\/watch?v=eXKE0nAMmg4",
+    "videoID":"eXKE0nAMmg4",
+    "question_id":"015-3",
+    "task_type":"Object Reasoning",
+    "question":"Based on the information provided by the video, which of the following statements is not correct?",
+    "options":[
+      "A. The painting got more expensive because it shredded.",
+      "B. The buyer put a shredder inside the painting many years ago.",
+      "C. People in the auction house were stunned when the painting shredded.",
+      "D. Banksky considered the shredding of painting is part of art."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"016",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Literature & Art",
+    "url":"https:\/\/www.youtube.com\/watch?v=5_fXicEnKKk",
+    "videoID":"5_fXicEnKKk",
+    "question_id":"016-1",
+    "task_type":"Attribute Perception",
+    "question":"When was the painting mentioned in the video painted?",
+    "options":[
+      "A. 1998.",
+      "B. 1889.",
+      "C. 1899.",
+      "D. 1988."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"016",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Literature & Art",
+    "url":"https:\/\/www.youtube.com\/watch?v=5_fXicEnKKk",
+    "videoID":"5_fXicEnKKk",
+    "question_id":"016-2",
+    "task_type":"Object Reasoning",
+    "question":"Which of the following elements does not appear in the paintings primarily mentioned in the video?",
+    "options":[
+      "A. Van Gogh' tragic life.",
+      "B. The Van Gogh's artistic attainments.",
+      "C. The value of the painting.",
+      "D. The hope that led Van Gogh into success."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"016",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Literature & Art",
+    "url":"https:\/\/www.youtube.com\/watch?v=5_fXicEnKKk",
+    "videoID":"5_fXicEnKKk",
+    "question_id":"016-3",
+    "task_type":"Object Reasoning",
+    "question":"Which of the following elements is not present in the \"Starry Sky\"?",
+    "options":[
+      "A. Houses.",
+      "B. Stars.",
+      "C. Castle.",
+      "D. Moon."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"017",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Literature & Art",
+    "url":"https:\/\/www.youtube.com\/watch?v=O0qVPW1fUn4",
+    "videoID":"O0qVPW1fUn4",
+    "question_id":"017-1",
+    "task_type":"Counting Problem",
+    "question":"Based on the information provided by the video, what is the maximum number of fingers required to play this piece of music?",
+    "options":[
+      "A. Three.",
+      "B. Ten.",
+      "C. Four.",
+      "D. Five."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"017",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Literature & Art",
+    "url":"https:\/\/www.youtube.com\/watch?v=O0qVPW1fUn4",
+    "videoID":"O0qVPW1fUn4",
+    "question_id":"017-2",
+    "task_type":"Object Reasoning",
+    "question":"What do the characters in this video mean?",
+    "options":[
+      "A. Volume.",
+      "B. Scale.",
+      "C. Note.",
+      "D. Strength of pressing the piano keys."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"017",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Literature & Art",
+    "url":"https:\/\/www.youtube.com\/watch?v=O0qVPW1fUn4",
+    "videoID":"O0qVPW1fUn4",
+    "question_id":"017-3",
+    "task_type":"Object Reasoning",
+    "question":"In this video, why some keys are blue while others are green?",
+    "options":[
+      "A. Because it indicates the hand to play them.",
+      "B. Because it can help to make the video more colorful.",
+      "C. Because the YouTuber love these two colors.",
+      "D. Because keys on the special piano are eithor blue or green."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"018",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Literature & Art",
+    "url":"https:\/\/www.youtube.com\/watch?v=tX8a00l_Dfs",
+    "videoID":"tX8a00l_Dfs",
+    "question_id":"018-1",
+    "task_type":"Action Recognition",
+    "question":"According to the video, which finger does not need to press the strings when playing Em9?",
+    "options":[
+      "A. Index finger.",
+      "B. Middle finger.",
+      "C. Ring finger.",
+      "D. Little finger."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"018",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Literature & Art",
+    "url":"https:\/\/www.youtube.com\/watch?v=tX8a00l_Dfs",
+    "videoID":"tX8a00l_Dfs",
+    "question_id":"018-2",
+    "task_type":"Counting Problem",
+    "question":"How many kinds of chords are played in the video?",
+    "options":[
+      "A. Eight.",
+      "B. Seven.",
+      "C. Fourteen.",
+      "D. Six."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"018",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Literature & Art",
+    "url":"https:\/\/www.youtube.com\/watch?v=tX8a00l_Dfs",
+    "videoID":"tX8a00l_Dfs",
+    "question_id":"018-3",
+    "task_type":"Action Reasoning",
+    "question":"What did the YouTuber do at the latter part of the video?",
+    "options":[
+      "A. He played his favorite tune.",
+      "B. He claimed that he loves the chords mentioned above.",
+      "C. He played some complex chords.",
+      "D. He strung many chords."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"019",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Literature & Art",
+    "url":"https:\/\/www.youtube.com\/watch?v=mVIXU0x9ocI",
+    "videoID":"mVIXU0x9ocI",
+    "question_id":"019-1",
+    "task_type":"Action Reasoning",
+    "question":"What is the author's intention in presenting a scene where all birds fly away except for one on the branch?",
+    "options":[
+      "A. The bird feels tired of flying.",
+      "B. The bird likes to stay on the branch.",
+      "C. The bird might get used to being alone.",
+      "D. The bird is dead."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"019",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Literature & Art",
+    "url":"https:\/\/www.youtube.com\/watch?v=mVIXU0x9ocI",
+    "videoID":"mVIXU0x9ocI",
+    "question_id":"019-2",
+    "task_type":"Action Recognition",
+    "question":"What is the raven doing in the video?",
+    "options":[
+      "A. Eating.",
+      "B. Flying.",
+      "C. Walking.",
+      "D. Sleeping."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"019",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Literature & Art",
+    "url":"https:\/\/www.youtube.com\/watch?v=mVIXU0x9ocI",
+    "videoID":"mVIXU0x9ocI",
+    "question_id":"019-3",
+    "task_type":"OCR Problems",
+    "question":"Whom is the poem in the video written by?",
+    "options":[
+      "A. Michael.",
+      "B. Alone.",
+      "C. Edgar.",
+      "D. Shakespeare."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"020",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Literature & Art",
+    "url":"https:\/\/www.youtube.com\/watch?v=YPaLGP_xr-w",
+    "videoID":"YPaLGP_xr-w",
+    "question_id":"020-1",
+    "task_type":"Object Reasoning",
+    "question":"Based on the video, which of the following statements provides the most accurate explanation for why the Statue of Liberty is green in color?",
+    "options":[
+      "A. Because the copper is rusty.",
+      "B. Because she was painted green.",
+      "C. Because people didn't like her original color.",
+      "D. Because she is not the origin one any more."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"020",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Literature & Art",
+    "url":"https:\/\/www.youtube.com\/watch?v=YPaLGP_xr-w",
+    "videoID":"YPaLGP_xr-w",
+    "question_id":"020-2",
+    "task_type":"Action Reasoning",
+    "question":"How did the photographer who took pictures of the three tourists in the video take the photo?",
+    "options":[
+      "A. By standing at the foot of the statue.",
+      "B. By going up to the crown of the statue.",
+      "C. By asking the vistor to lie down.",
+      "D. By lying down himself."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"020",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Literature & Art",
+    "url":"https:\/\/www.youtube.com\/watch?v=YPaLGP_xr-w",
+    "videoID":"YPaLGP_xr-w",
+    "question_id":"020-3",
+    "task_type":"Spatial Perception",
+    "question":"Based on the information provided by the video, where is the best spot for tourists to take aerial photos of the sculpture mentioned in the video?",
+    "options":[
+      "A. At her feet.",
+      "B. At her crown.",
+      "C. Taken from the sea in the distance.",
+      "D. At her neck."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"021",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Biology & Medicine",
+    "url":"https:\/\/www.youtube.com\/watch?v=TbaCxIJ_VP4",
+    "videoID":"TbaCxIJ_VP4",
+    "question_id":"021-1",
+    "task_type":"Information Synopsis",
+    "question":"Which of the following accurately describes the content of the video?",
+    "options":[
+      "A. How mRNA vaccines work.",
+      "B. Production process and specifications of mRNA vaccines.",
+      "C. Application market of mRNA vaccine.",
+      "D. Possible side effects of mRNA vaccines."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"021",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Biology & Medicine",
+    "url":"https:\/\/www.youtube.com\/watch?v=TbaCxIJ_VP4",
+    "videoID":"TbaCxIJ_VP4",
+    "question_id":"021-2",
+    "task_type":"Attribute Perception",
+    "question":"Where does mRNA come from in the video?",
+    "options":[
+      "A. Cells.",
+      "B. Vaccines.",
+      "C. COVID-19 virus.",
+      "D. Antibodies."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"021",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Biology & Medicine",
+    "url":"https:\/\/www.youtube.com\/watch?v=TbaCxIJ_VP4",
+    "videoID":"TbaCxIJ_VP4",
+    "question_id":"021-3",
+    "task_type":"Attribute Perception",
+    "question":"What color is the cell membrane of the virus-invaded cell in the video?",
+    "options":[
+      "A. Black.",
+      "B. Yellow.",
+      "C. Red.",
+      "D. Blue."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"022",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Biology & Medicine",
+    "url":"https:\/\/www.youtube.com\/watch?v=n3IYmdy6d4Y",
+    "videoID":"n3IYmdy6d4Y",
+    "question_id":"022-1",
+    "task_type":"OCR Problems",
+    "question":"According to the video, how long should one wait before cracking the same knuckle again?",
+    "options":[
+      "A. About 25 minutes.",
+      "B. About 20 minutes.",
+      "C. About 15 minutes.",
+      "D. About 23 minutes."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"022",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Biology & Medicine",
+    "url":"https:\/\/www.youtube.com\/watch?v=n3IYmdy6d4Y",
+    "videoID":"n3IYmdy6d4Y",
+    "question_id":"022-2",
+    "task_type":"Temporal Perception",
+    "question":"What detail does the caption provide about the term \"synovial\" at the beginning of the video?",
+    "options":[
+      "A. It is derived from the Latin word for 'egg'.",
+      "B. It is a term used to describe a type of joint movement.",
+      "C. It refers to a type of bone tissue.",
+      "D. It indicates a condition related to the joints."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"022",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Biology & Medicine",
+    "url":"https:\/\/www.youtube.com\/watch?v=n3IYmdy6d4Y",
+    "videoID":"n3IYmdy6d4Y",
+    "question_id":"022-3",
+    "task_type":"Information Synopsis",
+    "question":"Which of the following could be the main topic of the video segment?",
+    "options":[
+      "A. The surgical procedure for joint replacement.",
+      "B. The nutritional requirements for healthy bones.",
+      "C. The explanation of how joint lubrication works.",
+      "D. What happens to your knuckles when you crack them."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"023",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Biology & Medicine",
+    "url":"https:\/\/www.youtube.com\/watch?v=iZYLeIJwe4w",
+    "videoID":"iZYLeIJwe4w",
+    "question_id":"023-1",
+    "task_type":"Information Synopsis",
+    "question":"Which option best describes the main topic of the video?",
+    "options":[
+      "A. Bacteria are replicating inside a cell.",
+      "B. A cell is being infected by a virus.",
+      "C. An immune cell is destroying pathogens.",
+      "D. A platelet is clotting blood."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"023",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Biology & Medicine",
+    "url":"https:\/\/www.youtube.com\/watch?v=iZYLeIJwe4w",
+    "videoID":"iZYLeIJwe4w",
+    "question_id":"023-2",
+    "task_type":"Object Recognition",
+    "question":"What is the mechanism\/process that can break down bacteria according to the video?",
+    "options":[
+      "A. Special digestive enzymes: such as proteases or nucleases, which can break down bacterial proteins or nucleic acids under specific conditions.",
+      "B. Medical surgical instruments: e.g. scalpels, dissecting scissors, grinding equipment, etc., used for handling bacteria in surgery or cell culture.",
+      "C. Environmental disinfectants: Certain disinfectants, such as alcohol or hydrogen peroxide, are capable of disrupting the cell walls and membranes of bacteria, causing them to lyse.",
+      "D. Autoclaves: Autoclaving kills microorganisms, including bacteria, in medical devices or sample processing."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"023",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Biology & Medicine",
+    "url":"https:\/\/www.youtube.com\/watch?v=iZYLeIJwe4w",
+    "videoID":"iZYLeIJwe4w",
+    "question_id":"023-3",
+    "task_type":"Attribute Perception",
+    "question":"Which cell shown in the video is of the same type as the white cell scrolling at the beginning?",
+    "options":[
+      "A. The green cells in the middle of the video, devour a red cell.",
+      "B. The devoured green cells at the beginning of the video.",
+      "C. Tiny dense cells in blue at the beginning of the video.",
+      "D. It is impossible to extrapolate."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"024",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Biology & Medicine",
+    "url":"https:\/\/www.youtube.com\/watch?v=jkNxmTrrZSk",
+    "videoID":"jkNxmTrrZSk",
+    "question_id":"024-1",
+    "task_type":"Information Synopsis",
+    "question":"What does the video depict?",
+    "options":[
+      "A. A virus attacks a cell.",
+      "B. The replication of DNA.",
+      "C. A neuron sends a signal.",
+      "D. White blood cells attacking a pathogen."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"024",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Biology & Medicine",
+    "url":"https:\/\/www.youtube.com\/watch?v=jkNxmTrrZSk",
+    "videoID":"jkNxmTrrZSk",
+    "question_id":"024-2",
+    "task_type":"Temporal Perception",
+    "question":"Which object is depicted as a small flying black dot at the start of the video?",
+    "options":[
+      "A. Dust mites in the lungs.",
+      "B. Virus.",
+      "C. Protein Receptors.",
+      "D. Black bacteria."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"024",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Biology & Medicine",
+    "url":"https:\/\/www.youtube.com\/watch?v=jkNxmTrrZSk",
+    "videoID":"jkNxmTrrZSk",
+    "question_id":"024-3",
+    "task_type":"Information Synopsis",
+    "question":"What might be the primary focus of the video?",
+    "options":[
+      "A. The process by which viruses are eliminated by the body's immune response.",
+      "B. Mechanisms of viral infection.",
+      "C. Production and spread of viruses.",
+      "D. Types of viruses and the most harmful ones."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"025",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Biology & Medicine",
+    "url":"https:\/\/www.youtube.com\/watch?v=ebzbKa32kuk",
+    "videoID":"ebzbKa32kuk",
+    "question_id":"025-1",
+    "task_type":"Object Recognition",
+    "question":"What structure is primarily depicted in the video?",
+    "options":[
+      "A. A model of a human lung.",
+      "B. A model of a human heart.",
+      "C. A model of a human liver.",
+      "D. A model of a human kidney."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"025",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Biology & Medicine",
+    "url":"https:\/\/www.youtube.com\/watch?v=ebzbKa32kuk",
+    "videoID":"ebzbKa32kuk",
+    "question_id":"025-2",
+    "task_type":"Attribute Perception",
+    "question":"Which of the following features is NOT visible on the model of the heart in the video?",
+    "options":[
+      "A. Coronary arteries.",
+      "B. Pulmonary veins.",
+      "C. Hepatic veins.",
+      "D. Aortic valve."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"025",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Biology & Medicine",
+    "url":"https:\/\/www.youtube.com\/watch?v=ebzbKa32kuk",
+    "videoID":"ebzbKa32kuk",
+    "question_id":"025-3",
+    "task_type":"Object Reasoning",
+    "question":"Which of the following best describes the purpose of the content shown in the video?",
+    "options":[
+      "A. For medical education.",
+      "B. For psychological prevention and treatment.",
+      "C. For diagnosis of special cases.",
+      "D. To guide home exercise programmes."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"026",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Biology & Medicine",
+    "url":"https:\/\/www.youtube.com\/watch?v=XWfqBKeC0g8",
+    "videoID":"XWfqBKeC0g8",
+    "question_id":"026-1",
+    "task_type":"Object Recognition",
+    "question":"What type of cells are highlighted in the video?",
+    "options":[
+      "A. Lung cancer cells.",
+      "B. Brain cancer cells.",
+      "C. Pancreatic cancer cells.",
+      "D. Stomach cancer cells."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"026",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Biology & Medicine",
+    "url":"https:\/\/www.youtube.com\/watch?v=XWfqBKeC0g8",
+    "videoID":"XWfqBKeC0g8",
+    "question_id":"026-2",
+    "task_type":"OCR Problems",
+    "question":"What level of magnification is used to view the cells in the video?",
+    "options":[
+      "A. 2000x magnification.",
+      "B. 1500x magnification.",
+      "C. 1000x magnification.",
+      "D. 500x magnification."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"026",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Biology & Medicine",
+    "url":"https:\/\/www.youtube.com\/watch?v=XWfqBKeC0g8",
+    "videoID":"XWfqBKeC0g8",
+    "question_id":"026-3",
+    "task_type":"Action Recognition",
+    "question":"What process might these cells be undergoing?",
+    "options":[
+      "A. Amitosis.",
+      "B. Photosynthesis.",
+      "C. Enzymatic reactions.",
+      "D. Mitosis."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"027",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Biology & Medicine",
+    "url":"https:\/\/www.youtube.com\/watch?v=tS4a6I4-Yjo",
+    "videoID":"tS4a6I4-Yjo",
+    "question_id":"027-1",
+    "task_type":"Temporal Perception",
+    "question":"Why does the woman need to drink water at the beginning of the video?",
+    "options":[
+      "A. Because she is preparing for a medical examination.",
+      "B. Because she went through an operation and needed to be hydrated.",
+      "C. Because she is sick and takes medication that requires a lot of water for adequate reflection.",
+      "D. Instead of water, she drinks a special medicine."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"027",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Biology & Medicine",
+    "url":"https:\/\/www.youtube.com\/watch?v=tS4a6I4-Yjo",
+    "videoID":"tS4a6I4-Yjo",
+    "question_id":"027-2",
+    "task_type":"OCR Problems",
+    "question":"Which organization is responsible for publishing the video?",
+    "options":[
+      "A. UCLA Medical Center.",
+      "B. Eye Research USA.",
+      "C. Cancer Research UK.",
+      "D. South Africa Medical Center."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"027",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Biology & Medicine",
+    "url":"https:\/\/www.youtube.com\/watch?v=tS4a6I4-Yjo",
+    "videoID":"tS4a6I4-Yjo",
+    "question_id":"027-3",
+    "task_type":"Action Reasoning",
+    "question":"Which of the following statements can be inferred from the video?",
+    "options":[
+      "A. The patient is undergoing an ECG.",
+      "B. The patient is undergoing a CT scan.",
+      "C. The healthcare worker is teaching a medical student.",
+      "D. The healthcare worker is conducting a medical experiment."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"028",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Biology & Medicine",
+    "url":"https:\/\/www.youtube.com\/watch?v=TVkck1ACKDQ",
+    "videoID":"TVkck1ACKDQ",
+    "question_id":"028-1",
+    "task_type":"Object Recognition",
+    "question":"What organ did the woman in the video remove from the medical model?",
+    "options":[
+      "A. She removed the liver.",
+      "B. She removed the lungs.",
+      "C. She removed the kidney.",
+      "D. She removed the heart."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"028",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Biology & Medicine",
+    "url":"https:\/\/www.youtube.com\/watch?v=TVkck1ACKDQ",
+    "videoID":"TVkck1ACKDQ",
+    "question_id":"028-2",
+    "task_type":"Information Synopsis",
+    "question":"What is the purpose of the video?",
+    "options":[
+      "A. Promotion for a hospital.",
+      "B. Admissions brochure for a school.",
+      "C. Introduction of a newly established medical laboratory.",
+      "D. Introduction of excellent characters."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"028",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Biology & Medicine",
+    "url":"https:\/\/www.youtube.com\/watch?v=TVkck1ACKDQ",
+    "videoID":"TVkck1ACKDQ",
+    "question_id":"028-3",
+    "task_type":"Counting Problem",
+    "question":"How many different people appear in the video?",
+    "options":[
+      "A. 3.",
+      "B. 4.",
+      "C. 1.",
+      "D. 2."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"029",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Biology & Medicine",
+    "url":"https:\/\/www.youtube.com\/watch?v=JbDRs0ja3PE",
+    "videoID":"JbDRs0ja3PE",
+    "question_id":"029-1",
+    "task_type":"Object Recognition",
+    "question":"Which human organ is visible in the video?",
+    "options":[
+      "A. Stomach.",
+      "B. Liver.",
+      "C. Lungs.",
+      "D. Kidneys."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"029",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Biology & Medicine",
+    "url":"https:\/\/www.youtube.com\/watch?v=JbDRs0ja3PE",
+    "videoID":"JbDRs0ja3PE",
+    "question_id":"029-2",
+    "task_type":"Information Synopsis",
+    "question":"What is the purpose of the video?",
+    "options":[
+      "A. To warn about environmental issues.",
+      "B. To offer health-related advice.",
+      "C. To provide a weather update.",
+      "D. To advertise a new movie."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"029",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Biology & Medicine",
+    "url":"https:\/\/www.youtube.com\/watch?v=JbDRs0ja3PE",
+    "videoID":"JbDRs0ja3PE",
+    "question_id":"029-3",
+    "task_type":"Information Synopsis",
+    "question":"What is the most likely message being conveyed by the video?",
+    "options":[
+      "A. The beauty of natural phenomena.",
+      "B. The excitement of scientific discovery.",
+      "C. The global impact of wildfires.",
+      "D. The dangers of drug interactions."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"030",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Biology & Medicine",
+    "url":"https:\/\/www.youtube.com\/watch?v=39HTpUG1MwQ",
+    "videoID":"39HTpUG1MwQ",
+    "question_id":"030-1",
+    "task_type":"Temporal Perception",
+    "question":"What organelle is depicted at the beginning of the video?",
+    "options":[
+      "A. Mitochondrion.",
+      "B. Ribosome.",
+      "C. Chloroplast.",
+      "D. Golgi apparatus."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"030",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Biology & Medicine",
+    "url":"https:\/\/www.youtube.com\/watch?v=39HTpUG1MwQ",
+    "videoID":"39HTpUG1MwQ",
+    "question_id":"030-2",
+    "task_type":"Object Recognition",
+    "question":"What color is the ATP in the video?",
+    "options":[
+      "A. Black.",
+      "B. Green.",
+      "C. Blue.",
+      "D. Red."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"030",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Biology & Medicine",
+    "url":"https:\/\/www.youtube.com\/watch?v=39HTpUG1MwQ",
+    "videoID":"39HTpUG1MwQ",
+    "question_id":"030-3",
+    "task_type":"Attribute Perception",
+    "question":"Based on the video, what is the main function of the organelle featured in the footage?",
+    "options":[
+      "A. Protein synthesis.",
+      "B. Energy production.",
+      "C. Photosynthesis.",
+      "D. Lipid metabolism."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"031",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Finance & Commerce",
+    "url":"https:\/\/www.youtube.com\/watch?v=TPS22HRRY1k",
+    "videoID":"TPS22HRRY1k",
+    "question_id":"031-1",
+    "task_type":"Attribute Perception",
+    "question":"Which of the following best describes the types of assets included within Will's \"Assets Under Management\" visual bar in the video, showcasing the composition of the mutual fund's holdings?",
+    "options":[
+      "A. Real Estate (blue), Precious Metals (red), and Foreign Currencies (yellow).",
+      "B. Real Estate (blue), Foreign Currencies (red), and Precious Metals (yellow).",
+      "C. Bonds (blue), Stocks (red), and Cash (yellow).",
+      "D. Stocks (blue), Bonds (red), and Cash (yellow)."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"031",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Finance & Commerce",
+    "url":"https:\/\/www.youtube.com\/watch?v=TPS22HRRY1k",
+    "videoID":"TPS22HRRY1k",
+    "question_id":"031-2",
+    "task_type":"Information Synopsis",
+    "question":"Which best summarizes the content of the video?",
+    "options":[
+      "A. The process of registering a new mutual fund with the regulator and the associated legal requirements.",
+      "B. A basic explanation of what mutual funds are, and how they work.",
+      "C. A basic explanation of what national debts are, how they work and some key terms management.",
+      "D. The benefits and risks of investing in mutual funds as compared to other investment options such as individual stocks and bonds."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"031",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Finance & Commerce",
+    "url":"https:\/\/www.youtube.com\/watch?v=TPS22HRRY1k",
+    "videoID":"TPS22HRRY1k",
+    "question_id":"031-3",
+    "task_type":"Information Synopsis",
+    "question":"According to the video, which of the following statements is true?",
+    "options":[
+      "A. People no longer need to choose their own diversified investment portfolio after buying a mutual fund.",
+      "B. Investors in a closed-ended fund can withdraw their investment without trading to another investor.",
+      "C. Closed-ended funds can continually accept more funds from outsiders.",
+      "D. Anyone can set up a mutual fund at will."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"032",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Finance & Commerce",
+    "url":"https:\/\/www.youtube.com\/watch?v=X30VlGh3HwQ",
+    "videoID":"X30VlGh3HwQ",
+    "question_id":"032-1",
+    "task_type":"Temporal Perception",
+    "question":"What is the video illustrating when there are three buildings appear in the video at the same time?",
+    "options":[
+      "A. The debt relationship between the federal government, municipalities, and businesses.",
+      "B. The issuers in the bond market include the federal government, municipalities, and corporations.",
+      "C. Presentations by and between the federal government, municipalities, and businesses.",
+      "D. The issuance of bonds to fund the construction of infrastructure."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"032",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Finance & Commerce",
+    "url":"https:\/\/www.youtube.com\/watch?v=X30VlGh3HwQ",
+    "videoID":"X30VlGh3HwQ",
+    "question_id":"032-2",
+    "task_type":"Object Reasoning",
+    "question":"Based on data presented in the video, what was the approximate difference in value between the US bond market and the US stock market as of 2020?",
+    "options":[
+      "A. $5 trillion.",
+      "B. $10 trillion.",
+      "C. $15 trillion.",
+      "D. $20 trillion."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"032",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Finance & Commerce",
+    "url":"https:\/\/www.youtube.com\/watch?v=X30VlGh3HwQ",
+    "videoID":"X30VlGh3HwQ",
+    "question_id":"032-3",
+    "task_type":"Counting Problem",
+    "question":"How many laptops are produced in the company factory in the video animation?",
+    "options":[
+      "A. 9.",
+      "B. 6.",
+      "C. 8.",
+      "D. 7."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"033",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Finance & Commerce",
+    "url":"https:\/\/www.youtube.com\/watch?v=zKyWRRJQbkM",
+    "videoID":"zKyWRRJQbkM",
+    "question_id":"033-1",
+    "task_type":"Object Recognition",
+    "question":"Which denominations of bills and\/or coins are shown in the animation at the beginning of the video, and what is the total value of these denominations?",
+    "options":[
+      "A. $15.25, including three $5 bills and one quarter.",
+      "B. $2.25, including two $1 bills and one quarter.",
+      "C. $7.25, including one $5 bill, two $1 bills and one quarter.",
+      "D. $10.25, including two $5 bills and one quarter."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"033",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Finance & Commerce",
+    "url":"https:\/\/www.youtube.com\/watch?v=zKyWRRJQbkM",
+    "videoID":"zKyWRRJQbkM",
+    "question_id":"033-2",
+    "task_type":"Object Reasoning",
+    "question":"Which historical figure is visually depicted in a framed portrait in the video?",
+    "options":[
+      "A. Abraham Lincoln.",
+      "B. George Washington.",
+      "C. John F. Kennedy.",
+      "D. Franklin D. Roosevelt."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"033",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Finance & Commerce",
+    "url":"https:\/\/www.youtube.com\/watch?v=zKyWRRJQbkM",
+    "videoID":"zKyWRRJQbkM",
+    "question_id":"033-3",
+    "task_type":"Object Recognition",
+    "question":"In the video, what visual aid is used to compare the nominal minimum wage with its value in 2019 dollars, demonstrating the impact of inflation?",
+    "options":[
+      "A. A map of the United States with states color-coded by their minimum wage laws.",
+      "B. A line graph showing the trend of the federal minimum wage over time.",
+      "C. A line graph with two lines.",
+      "D. A side-by-side comparison of a 2019 dollar bill and a 1938 dollar bill."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"034",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Finance & Commerce",
+    "url":"https:\/\/www.youtube.com\/watch?v=blSnLEZe-sI",
+    "videoID":"blSnLEZe-sI",
+    "question_id":"034-1",
+    "task_type":"Information Synopsis",
+    "question":"What is this video about?",
+    "options":[
+      "A. Shares.",
+      "B. Central bank.",
+      "C. Financial crisis.",
+      "D. Quantitative easing."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"034",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Finance & Commerce",
+    "url":"https:\/\/www.youtube.com\/watch?v=blSnLEZe-sI",
+    "videoID":"blSnLEZe-sI",
+    "question_id":"034-2",
+    "task_type":"Information Synopsis",
+    "question":"According to the video, which statement is correct?",
+    "options":[
+      "A. The overall stock market could see stronger gains because of quantitative easing.",
+      "B. Quantitative easing requires the central bank to print money.",
+      "C. QE makes those so-called safe assets more attractive.",
+      "D. Quantitative easing leads to more money in the system."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"034",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Finance & Commerce",
+    "url":"https:\/\/www.youtube.com\/watch?v=blSnLEZe-sI",
+    "videoID":"blSnLEZe-sI",
+    "question_id":"034-3",
+    "task_type":"Object Reasoning",
+    "question":"What does the combination of a bond certificate and the UK flag most likely symbolize in the video?",
+    "options":[
+      "A. The UK's dependence on foreign investments.",
+      "B. The UK's use of bonds for quantitative easing.",
+      "C. The UK's high national debt.",
+      "D. The UK's strong bond market."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"035",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Finance & Commerce",
+    "url":"https:\/\/www.youtube.com\/watch?v=Gh_GtYtQoVI",
+    "videoID":"Gh_GtYtQoVI",
+    "question_id":"035-1",
+    "task_type":"Object Reasoning",
+    "question":"What is the function of the stopwatch in the upper right corner of the video?",
+    "options":[
+      "A. To indicate the total duration of this video.",
+      "B. The video author made the annotations in order to explain clearly what finance is within one minute.",
+      "C. To display the current time when the narrator is sharing financial knowledge.",
+      "D. It is a countdown timer."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"035",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Finance & Commerce",
+    "url":"https:\/\/www.youtube.com\/watch?v=Gh_GtYtQoVI",
+    "videoID":"Gh_GtYtQoVI",
+    "question_id":"035-2",
+    "task_type":"Spatial Perception",
+    "question":"In what direction does the video author draw the various financial institutions?",
+    "options":[
+      "A. From left to right.",
+      "B. From right to left.",
+      "C. From bottom to top.",
+      "D. From top to bottom."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"035",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Finance & Commerce",
+    "url":"https:\/\/www.youtube.com\/watch?v=Gh_GtYtQoVI",
+    "videoID":"Gh_GtYtQoVI",
+    "question_id":"035-3",
+    "task_type":"Information Synopsis",
+    "question":"From which aspect does the video describe the role of finance?",
+    "options":[
+      "A. Business investment.",
+      "B. Market pricing.",
+      "C. Resource allocation.",
+      "D. Structural adjustment."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"036",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Finance & Commerce",
+    "url":"https:\/\/www.youtube.com\/watch?v=MXKDvuEkSF0",
+    "videoID":"MXKDvuEkSF0",
+    "question_id":"036-1",
+    "task_type":"Counting Problem",
+    "question":"How many new advertising situations are introduced in the video?",
+    "options":[
+      "A. 3.",
+      "B. 1.",
+      "C. 2.",
+      "D. 4."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"036",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Finance & Commerce",
+    "url":"https:\/\/www.youtube.com\/watch?v=MXKDvuEkSF0",
+    "videoID":"MXKDvuEkSF0",
+    "question_id":"036-2",
+    "task_type":"OCR Problems",
+    "question":"How much did sales increase at Dunkin' Donuts locations situated near the scent marketing dispensers?",
+    "options":[
+      "A. 37%.",
+      "B. 39%.",
+      "C. 27%.",
+      "D. 29%."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"036",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Finance & Commerce",
+    "url":"https:\/\/www.youtube.com\/watch?v=MXKDvuEkSF0",
+    "videoID":"MXKDvuEkSF0",
+    "question_id":"036-3",
+    "task_type":"OCR Problems",
+    "question":"What is the estimated value of the global marketing industry?",
+    "options":[
+      "A. $612 billion.",
+      "B. $45 million.",
+      "C. $58 million.",
+      "D. $475 billion."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"037",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Finance & Commerce",
+    "url":"https:\/\/www.youtube.com\/watch?v=EQ-67udZEeg",
+    "videoID":"EQ-67udZEeg",
+    "question_id":"037-1",
+    "task_type":"OCR Problems",
+    "question":"Which of the following companies is not featured in the video?",
+    "options":[
+      "A. General Electric.",
+      "B. Starbucks.",
+      "C. Adobe.",
+      "D. Pepsi."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"037",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Finance & Commerce",
+    "url":"https:\/\/www.youtube.com\/watch?v=EQ-67udZEeg",
+    "videoID":"EQ-67udZEeg",
+    "question_id":"037-2",
+    "task_type":"Information Synopsis",
+    "question":"What visual element is used to showcase companies that are included in the Dow Jones Industrial Average?",
+    "options":[
+      "A. Photographs of corporate buildings.",
+      "B. Animated stock tickers scrolling across the screen.",
+      "C. Hand-drawn company logos.",
+      "D. Charts showing stock performance over time."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"037",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Finance & Commerce",
+    "url":"https:\/\/www.youtube.com\/watch?v=EQ-67udZEeg",
+    "videoID":"EQ-67udZEeg",
+    "question_id":"037-3",
+    "task_type":"Temporal Reasoning",
+    "question":"Which of the following is the correct order for the three indices presented in the video?",
+    "options":[
+      "A. Dow Jones, Nasdaq, S&P 500.",
+      "B. Nasdaq, S&P 500, Dow Jones.",
+      "C. S&P 500, Dow Jones, Nasdaq.",
+      "D. Dow Jones, S&P 500, Nasdaq."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"038",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Finance & Commerce",
+    "url":"https:\/\/www.youtube.com\/watch?v=GqeRnxSuLFI",
+    "videoID":"GqeRnxSuLFI",
+    "question_id":"038-1",
+    "task_type":"Attribute Perception",
+    "question":"Which color of clothing is worn by the first person selling bananas in the video?",
+    "options":[
+      "A. Blue.",
+      "B. Purple.",
+      "C. Black.",
+      "D. Green."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"038",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Finance & Commerce",
+    "url":"https:\/\/www.youtube.com\/watch?v=GqeRnxSuLFI",
+    "videoID":"GqeRnxSuLFI",
+    "question_id":"038-2",
+    "task_type":"Information Synopsis",
+    "question":"According to the video, which statement is correct?",
+    "options":[
+      "A. When supply is less than demand, you can make money by selling bananas.",
+      "B. You cannot make money by selling bananas.",
+      "C. You can make money by selling bananas.",
+      "D. When there are few people selling bananas, you can make money by selling bananas."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"038",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Finance & Commerce",
+    "url":"https:\/\/www.youtube.com\/watch?v=GqeRnxSuLFI",
+    "videoID":"GqeRnxSuLFI",
+    "question_id":"038-3",
+    "task_type":"Information Synopsis",
+    "question":"Which best summarizes the content of the video?",
+    "options":[
+      "A. Supply and demand.",
+      "B. Bananas supply.",
+      "C. Business competition.",
+      "D. Banana selling."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"039",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Finance & Commerce",
+    "url":"https:\/\/www.youtube.com\/watch?v=XOJKiOw8Xqo",
+    "videoID":"XOJKiOw8Xqo",
+    "question_id":"039-1",
+    "task_type":"Object Recognition",
+    "question":"Which time is displayed on the clock in the video?",
+    "options":[
+      "A. 08:00.",
+      "B. 03:00.",
+      "C. 11:00.",
+      "D. 05:00."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"039",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Finance & Commerce",
+    "url":"https:\/\/www.youtube.com\/watch?v=XOJKiOw8Xqo",
+    "videoID":"XOJKiOw8Xqo",
+    "question_id":"039-2",
+    "task_type":"Attribute Perception",
+    "question":"What is the color of Canada on the map in the video?",
+    "options":[
+      "A. Orange.",
+      "B. Yellow.",
+      "C. Pink.",
+      "D. Green."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"039",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Finance & Commerce",
+    "url":"https:\/\/www.youtube.com\/watch?v=XOJKiOw8Xqo",
+    "videoID":"XOJKiOw8Xqo",
+    "question_id":"039-3",
+    "task_type":"Information Synopsis",
+    "question":"What is the topic of this video?",
+    "options":[
+      "A. Gambling.",
+      "B. Money laundering.",
+      "C. Remittance.",
+      "D. Tax avoidance."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"040",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Finance & Commerce",
+    "url":"https:\/\/www.youtube.com\/watch?v=5ksVshqVuiM",
+    "videoID":"5ksVshqVuiM",
+    "question_id":"040-1",
+    "task_type":"Object Reasoning",
+    "question":"When did the events described in the video take place?",
+    "options":[
+      "A. Between 2014 and 2016.",
+      "B. Between 2020 and 2023.",
+      "C. Between 1997 and 2002.",
+      "D. Between 2006 and 2008."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"040",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Finance & Commerce",
+    "url":"https:\/\/www.youtube.com\/watch?v=5ksVshqVuiM",
+    "videoID":"5ksVshqVuiM",
+    "question_id":"040-2",
+    "task_type":"OCR Problems",
+    "question":"What was Amazon's stock price at the peak of the dot-com bubble?",
+    "options":[
+      "A. $7\/Share.",
+      "B. $100\/Share.",
+      "C. $600\/Share.",
+      "D. $300\/Share."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"040",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Finance & Commerce",
+    "url":"https:\/\/www.youtube.com\/watch?v=5ksVshqVuiM",
+    "videoID":"5ksVshqVuiM",
+    "question_id":"040-3",
+    "task_type":"Information Synopsis",
+    "question":"What is the main content of this video?",
+    "options":[
+      "A. Amazon's development.",
+      "B. The dot-com Bubble.",
+      "C. Company competition.",
+      "D. Stock market."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"041",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Astronomy",
+    "url":"https:\/\/www.youtube.com\/watch?v=yl5ZXQmrtP0",
+    "videoID":"yl5ZXQmrtP0",
+    "question_id":"041-1",
+    "task_type":"Temporal Reasoning",
+    "question":"When is the zodiacal light visible from the video?",
+    "options":[
+      "A. On March 19.",
+      "B. On March 24.",
+      "C. On March 25.",
+      "D. On March 29."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"041",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Astronomy",
+    "url":"https:\/\/www.youtube.com\/watch?v=yl5ZXQmrtP0",
+    "videoID":"yl5ZXQmrtP0",
+    "question_id":"041-2",
+    "task_type":"Counting Problem",
+    "question":"How many times is the sun visible in the video?",
+    "options":[
+      "A. 2.",
+      "B. 4.",
+      "C. 3.",
+      "D. 1."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"041",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Astronomy",
+    "url":"https:\/\/www.youtube.com\/watch?v=yl5ZXQmrtP0",
+    "videoID":"yl5ZXQmrtP0",
+    "question_id":"041-3",
+    "task_type":"Information Synopsis",
+    "question":"What is the main topic of the video?",
+    "options":[
+      "A. Diurnal alternation.",
+      "B. The relationship between the sun, Earth and moon.",
+      "C. Seasonal change.",
+      "D. Astronomical phenomena visible in March."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"042",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Astronomy",
+    "url":"https:\/\/www.youtube.com\/watch?v=kRlhlCWplqk",
+    "videoID":"kRlhlCWplqk",
+    "question_id":"042-1",
+    "task_type":"Counting Problem",
+    "question":"How many bodies are created after the collision?",
+    "options":[
+      "A. 2.",
+      "B. 3.",
+      "C. 1.",
+      "D. 4."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"042",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Astronomy",
+    "url":"https:\/\/www.youtube.com\/watch?v=kRlhlCWplqk",
+    "videoID":"kRlhlCWplqk",
+    "question_id":"042-2",
+    "task_type":"Information Synopsis",
+    "question":"Which of the following best describes the topic of the video?",
+    "options":[
+      "A. How is the Mars created.",
+      "B. How is the Earth created.",
+      "C. How is the moon created.",
+      "D. Why does Earth collide with Mars."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"042",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Astronomy",
+    "url":"https:\/\/www.youtube.com\/watch?v=kRlhlCWplqk",
+    "videoID":"kRlhlCWplqk",
+    "question_id":"042-3",
+    "task_type":"Object Reasoning",
+    "question":"How was the video most likely made?",
+    "options":[
+      "A. Using computer simulation.",
+      "B. Through special effects production.",
+      "C. By location shooting.",
+      "D. Manual model."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"043",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Astronomy",
+    "url":"https:\/\/www.youtube.com\/watch?v=9jjTGpWmc5U",
+    "videoID":"9jjTGpWmc5U",
+    "question_id":"043-1",
+    "task_type":"Spatial Reasoning",
+    "question":"Why does the roof object fly?",
+    "options":[
+      "A. There was an explosion.",
+      "B. Thrown into the air by a child.",
+      "C. Tied to a balloon.",
+      "D. Lunar approach."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"043",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Astronomy",
+    "url":"https:\/\/www.youtube.com\/watch?v=9jjTGpWmc5U",
+    "videoID":"9jjTGpWmc5U",
+    "question_id":"043-2",
+    "task_type":"Counting Problem",
+    "question":"How many people are watching TV in the video?",
+    "options":[
+      "A. 1.",
+      "B. 3.",
+      "C. 2.",
+      "D. 4."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"043",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Astronomy",
+    "url":"https:\/\/www.youtube.com\/watch?v=9jjTGpWmc5U",
+    "videoID":"9jjTGpWmc5U",
+    "question_id":"043-3",
+    "task_type":"Spatial Reasoning",
+    "question":"Which type of disaster is portrayed in the video?",
+    "options":[
+      "A. Man-made disaster.",
+      "B. Astronomical disaster.",
+      "C. Meteorological disaster.",
+      "D. Geological disaster."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"044",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Astronomy",
+    "url":"https:\/\/www.youtube.com\/watch?v=fo0Hmch2YS0",
+    "videoID":"fo0Hmch2YS0",
+    "question_id":"044-1",
+    "task_type":"Counting Problem",
+    "question":"How many people can be seen in the video?",
+    "options":[
+      "A. 2.",
+      "B. 3.",
+      "C. 4.",
+      "D. 1."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"044",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Astronomy",
+    "url":"https:\/\/www.youtube.com\/watch?v=fo0Hmch2YS0",
+    "videoID":"fo0Hmch2YS0",
+    "question_id":"044-2",
+    "task_type":"Spatial Reasoning",
+    "question":"What is the most likely cause of the disaster in the video?",
+    "options":[
+      "A. Warfare.",
+      "B. Meteorite attack.",
+      "C. Lunar impact.",
+      "D. Alien attack."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"044",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Astronomy",
+    "url":"https:\/\/www.youtube.com\/watch?v=fo0Hmch2YS0",
+    "videoID":"fo0Hmch2YS0",
+    "question_id":"044-3",
+    "task_type":"Action Recognition",
+    "question":"What are the people in the video doing?",
+    "options":[
+      "A. Exploring the earth.",
+      "B. Saving the earth.",
+      "C. Enjoying a meteor shower.",
+      "D. Escaping from a disaster."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"045",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Astronomy",
+    "url":"https:\/\/www.youtube.com\/watch?v=990ci2H9BBc",
+    "videoID":"990ci2H9BBc",
+    "question_id":"045-1",
+    "task_type":"Object Recognition",
+    "question":"What astronomical phenomenon is depicted in the video?",
+    "options":[
+      "A. Solar flare.",
+      "B. Observed black hole.",
+      "C. Total solar eclipse.",
+      "D. Mirage."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"045",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Astronomy",
+    "url":"https:\/\/www.youtube.com\/watch?v=990ci2H9BBc",
+    "videoID":"990ci2H9BBc",
+    "question_id":"045-2",
+    "task_type":"Action Recognition",
+    "question":"Which of the following is NOT known to occur during a total solar eclipse, according to the video?",
+    "options":[
+      "A. Temperature drop.",
+      "B. Appearance of snakes.",
+      "C. Appearance of planets and stars.",
+      "D. Appearance of rare shadow bands."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"045",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Astronomy",
+    "url":"https:\/\/www.youtube.com\/watch?v=990ci2H9BBc",
+    "videoID":"990ci2H9BBc",
+    "question_id":"045-3",
+    "task_type":"Object Recognition",
+    "question":"Where were the people in the video located while observing the total solar eclipse?",
+    "options":[
+      "A. Stadium.",
+      "B. Nature park.",
+      "C. Street.",
+      "D. Rooftop."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"046",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Astronomy",
+    "url":"https:\/\/www.youtube.com\/watch?v=gD0MvkDGAMg",
+    "videoID":"gD0MvkDGAMg",
+    "question_id":"046-1",
+    "task_type":"Information Synopsis",
+    "question":"What's the main point of this video?",
+    "options":[
+      "A. The role of supercomputers in the development of astronomy.",
+      "B. Astronomy enrollment outreach.",
+      "C. The role of atmospheric science.",
+      "D. The role of astronomical disciplines."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"046",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Astronomy",
+    "url":"https:\/\/www.youtube.com\/watch?v=gD0MvkDGAMg",
+    "videoID":"gD0MvkDGAMg",
+    "question_id":"046-2",
+    "task_type":"Object Recognition",
+    "question":"What is the first celestial object shown in the video?",
+    "options":[
+      "A. Earth.",
+      "B. Moon.",
+      "C. Jupiter.",
+      "D. Saturn."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"046",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Astronomy",
+    "url":"https:\/\/www.youtube.com\/watch?v=gD0MvkDGAMg",
+    "videoID":"gD0MvkDGAMg",
+    "question_id":"046-3",
+    "task_type":"Counting Problem",
+    "question":"How many times does the instructor in the video appear in different scenarios?",
+    "options":[
+      "A. 3.",
+      "B. 4.",
+      "C. 5.",
+      "D. 2."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"047",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Astronomy",
+    "url":"https:\/\/www.youtube.com\/watch?v=WTQ7_e8bnfM",
+    "videoID":"WTQ7_e8bnfM",
+    "question_id":"047-1",
+    "task_type":"Action Reasoning",
+    "question":"Which of the following emotions might the individuals in the video be feeling?",
+    "options":[
+      "A. Fear from an impending cataclysmic event.",
+      "B. Excitement about an airshow.",
+      "C. Admiration of a natural celestial event.",
+      "D. Appreciation of the natural landscape."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"047",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Astronomy",
+    "url":"https:\/\/www.youtube.com\/watch?v=WTQ7_e8bnfM",
+    "videoID":"WTQ7_e8bnfM",
+    "question_id":"047-2",
+    "task_type":"Information Synopsis",
+    "question":"What is depicted in the video?",
+    "options":[
+      "A. A nuclear explosion on Earth viewed from space.",
+      "B. The impact of a giant asteroid on Earth.",
+      "C. A volcanic eruption on the Earth's surface.",
+      "D. The sunrise as seen from space."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"047",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Astronomy",
+    "url":"https:\/\/www.youtube.com\/watch?v=WTQ7_e8bnfM",
+    "videoID":"WTQ7_e8bnfM",
+    "question_id":"047-3",
+    "task_type":"Spatial Reasoning",
+    "question":"What might be the immediate consequence of such an event according to the video?",
+    "options":[
+      "A. The onset of a new ice age.",
+      "B. A slight change in weather patterns.",
+      "C. Global seismic and tidal disturbances.",
+      "D. An increase in solar radiation entering the atmosphere."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"048",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Astronomy",
+    "url":"https:\/\/www.youtube.com\/watch?v=M7WOXFvwbSY",
+    "videoID":"M7WOXFvwbSY",
+    "question_id":"048-1",
+    "task_type":"Object Recognition",
+    "question":"Which galaxies are depicted in the video?",
+    "options":[
+      "A. The Sombrero Galaxy and the Triangulum Galaxy.",
+      "B. The Milky Way and the Whirlpool Galaxy.",
+      "C. The Triangulum Galaxy and the Whirlpool Galaxy.",
+      "D. The Andromeda Galaxy and the Milky Way."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"048",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Astronomy",
+    "url":"https:\/\/www.youtube.com\/watch?v=M7WOXFvwbSY",
+    "videoID":"M7WOXFvwbSY",
+    "question_id":"048-2",
+    "task_type":"Object Reasoning",
+    "question":"What significant event is the number at the bottom of the video referring to?",
+    "options":[
+      "A. The time until the Andromeda and Milky Way galaxies collide.",
+      "B. The number of stars in the Milky Way.",
+      "C. The age of the universe.",
+      "D. The time remaining before the Sun burns out."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"048",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Astronomy",
+    "url":"https:\/\/www.youtube.com\/watch?v=M7WOXFvwbSY",
+    "videoID":"M7WOXFvwbSY",
+    "question_id":"048-3",
+    "task_type":"Object Reasoning",
+    "question":"Which of the following statements can be inferred about the Triangulum Galaxy (M33) based on the information presented in the video about the other two galaxies?",
+    "options":[
+      "A. It interacts gravitationally with the Andromeda Galaxy (M31).",
+      "B. It may be a companion galaxy to the Andromeda Galaxy, influenced by its gravity.",
+      "C. It is a satellite galaxy of the Andromeda Galaxy.",
+      "D. It is involved in the collision between the Milky Way and Andromeda."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"049",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Astronomy",
+    "url":"https:\/\/www.youtube.com\/watch?v=RvnC--JjDBw",
+    "videoID":"RvnC--JjDBw",
+    "question_id":"049-1",
+    "task_type":"Action Recognition",
+    "question":"Which activity is being performed by the astronaut in the video?",
+    "options":[
+      "A. Boarding a spacecraft.",
+      "B. Conducting a spacewalk with a tether.",
+      "C. Using a Manned Maneuvering Unit (MMU) to float free in space.",
+      "D. Performing maintenance on the exterior of a space station."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"049",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Astronomy",
+    "url":"https:\/\/www.youtube.com\/watch?v=RvnC--JjDBw",
+    "videoID":"RvnC--JjDBw",
+    "question_id":"049-2",
+    "task_type":"Spatial Reasoning",
+    "question":"Which feature of the astronaut's equipment indicates that they can move independently in space in the video?",
+    "options":[
+      "A. The tether connecting the astronaut to the spacecraft.",
+      "B. The presence of a jetpack-like device on the astronaut's back.",
+      "C. The flag on the astronaut's suit.",
+      "D. The navigation system for determining position and direction of the movement."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"049",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Astronomy",
+    "url":"https:\/\/www.youtube.com\/watch?v=RvnC--JjDBw",
+    "videoID":"RvnC--JjDBw",
+    "question_id":"049-3",
+    "task_type":"Action Reasoning",
+    "question":"Considering the context of the astronaut in the video, what historic milestone might this represent?",
+    "options":[
+      "A. The first space tourist taking a trip to Earth orbit.",
+      "B. The first person to walk on the Moon.",
+      "C. The first human to orbit the Earth.",
+      "D. The first astronaut to float freely in space without a safety tether."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"050",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Astronomy",
+    "url":"https:\/\/www.youtube.com\/watch?v=08km9Yqbt-A",
+    "videoID":"08km9Yqbt-A",
+    "question_id":"050-1",
+    "task_type":"Temporal Perception",
+    "question":"What is the No.2 celestial event shown in the video?",
+    "options":[
+      "A. Perseid meteor shower.",
+      "B. A solar eclipse.",
+      "C. A lunar eclipse.",
+      "D. A meteor shower."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"050",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Astronomy",
+    "url":"https:\/\/www.youtube.com\/watch?v=08km9Yqbt-A",
+    "videoID":"08km9Yqbt-A",
+    "question_id":"050-2",
+    "task_type":"Temporal Perception",
+    "question":"On what date is the total eclipse supposed to occur in the video?",
+    "options":[
+      "A. August 1, 2008.",
+      "B. July 22, 2009.",
+      "C. June 29, 2024.",
+      "D. April 8, 2024."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"050",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Astronomy",
+    "url":"https:\/\/www.youtube.com\/watch?v=08km9Yqbt-A",
+    "videoID":"08km9Yqbt-A",
+    "question_id":"050-3",
+    "task_type":"Spatial Perception",
+    "question":"What direction should one face to observe the No.5 celestial event?",
+    "options":[
+      "A. North.",
+      "B. East.",
+      "C. South.",
+      "D. West."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"051",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Geography",
+    "url":"https:\/\/www.youtube.com\/watch?v=Qyg_91gNHCc",
+    "videoID":"Qyg_91gNHCc",
+    "question_id":"051-1",
+    "task_type":"Counting Problem",
+    "question":"How many bridges can be spotted in the video?",
+    "options":[
+      "A. Three.",
+      "B. Four.",
+      "C. Five.",
+      "D. One."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"051",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Geography",
+    "url":"https:\/\/www.youtube.com\/watch?v=Qyg_91gNHCc",
+    "videoID":"Qyg_91gNHCc",
+    "question_id":"051-2",
+    "task_type":"Object Recognition",
+    "question":"What do the scenes shot on Indus River and Yangze River have in common?",
+    "options":[
+      "A. They are all shot at dusk.",
+      "B. The land is covered with snow in both scene.",
+      "C. There are bridges on both scene.",
+      "D. They both contain an island in the middle of the lake."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"051",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Geography",
+    "url":"https:\/\/www.youtube.com\/watch?v=Qyg_91gNHCc",
+    "videoID":"Qyg_91gNHCc",
+    "question_id":"051-3",
+    "task_type":"Object Recognition",
+    "question":"In which river's bank is it possible to see snow?",
+    "options":[
+      "A. Lena River.",
+      "B. Yangze River.",
+      "C. Ob-Irtysh River.",
+      "D. Syr Darya River."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"052",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Geography",
+    "url":"https:\/\/www.youtube.com\/watch?v=nYLMNQ77FjM",
+    "videoID":"nYLMNQ77FjM",
+    "question_id":"052-1",
+    "task_type":"Spatial Reasoning",
+    "question":"According to the video, which of the following statement is true?",
+    "options":[
+      "A. It often erupts.",
+      "B. Mt. Fuji is an active volcano and thus very dangerous.",
+      "C. It is completely covered in snow.",
+      "D. It can be seen from Tokyo if the weather is fine."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"052",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Geography",
+    "url":"https:\/\/www.youtube.com\/watch?v=nYLMNQ77FjM",
+    "videoID":"nYLMNQ77FjM",
+    "question_id":"052-2",
+    "task_type":"Counting Problem",
+    "question":"How many climbers are there in the video?",
+    "options":[
+      "A. Five.",
+      "B. Four.",
+      "C. One.",
+      "D. Ten."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"052",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Geography",
+    "url":"https:\/\/www.youtube.com\/watch?v=nYLMNQ77FjM",
+    "videoID":"nYLMNQ77FjM",
+    "question_id":"052-3",
+    "task_type":"Attribute Perception",
+    "question":"What color of clothing is the painter wearing?",
+    "options":[
+      "A. Blue.",
+      "B. Yellow.",
+      "C. Black.",
+      "D. White."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"053",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Geography",
+    "url":"https:\/\/www.youtube.com\/watch?v=DF_J3vCcbBA",
+    "videoID":"DF_J3vCcbBA",
+    "question_id":"053-1",
+    "task_type":"Attribute Perception",
+    "question":"How does the color of lava change when exposed to the air for a short while?",
+    "options":[
+      "A. It turns blue.",
+      "B. It turns red.",
+      "C. It turns silver.",
+      "D. It turns black."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"053",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Geography",
+    "url":"https:\/\/www.youtube.com\/watch?v=DF_J3vCcbBA",
+    "videoID":"DF_J3vCcbBA",
+    "question_id":"053-2",
+    "task_type":"Action Recognition",
+    "question":"According to the video, how do the geologists collect lava safely?",
+    "options":[
+      "A. They use shovel to collects lava safely.",
+      "B. They wear black mask when collecting lava.",
+      "C. They manipulate drones to collect magma.",
+      "D. They stay far away from the lava."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"053",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Geography",
+    "url":"https:\/\/www.youtube.com\/watch?v=DF_J3vCcbBA",
+    "videoID":"DF_J3vCcbBA",
+    "question_id":"053-3",
+    "task_type":"Action Reasoning",
+    "question":"How do the geologists cool the lava down?",
+    "options":[
+      "A. By special oily coolant.",
+      "B. By leaving the lava on the ground.",
+      "C. By water.",
+      "D. By ice."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"054",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Geography",
+    "url":"https:\/\/www.youtube.com\/watch?v=wVlfyhs64IY",
+    "videoID":"wVlfyhs64IY",
+    "question_id":"054-1",
+    "task_type":"Attribute Perception",
+    "question":"Which of the following statements is not correct according to the video?",
+    "options":[
+      "A. Weather in one part of the world can affect the whole world.",
+      "B. El Niño and La Niña bring similar weather to North America.",
+      "C. El Niño usually shows up in winter.",
+      "D. El Niño and La Niña are both relevant to the abnormal intensity of trade winds."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"054",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Geography",
+    "url":"https:\/\/www.youtube.com\/watch?v=wVlfyhs64IY",
+    "videoID":"wVlfyhs64IY",
+    "question_id":"054-2",
+    "task_type":"Object Reasoning",
+    "question":"Which of the following is considered to be the primary cause of El Niño?",
+    "options":[
+      "A. West winds strengthen.",
+      "B. The reduction of upwelling water.",
+      "C. Trade winds weaken.",
+      "D. It often happens in winter over North America."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"054",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Geography",
+    "url":"https:\/\/www.youtube.com\/watch?v=wVlfyhs64IY",
+    "videoID":"wVlfyhs64IY",
+    "question_id":"054-3",
+    "task_type":"Object Reasoning",
+    "question":"How is cold water formed on the sea surface?",
+    "options":[
+      "A. It comes from deeper sea.",
+      "B. The trade winds bring away the heat on the sea surface.",
+      "C. The trade wind are colder than the sea water and thus cooling the sea water down.",
+      "D. Earthquake."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"055",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Geography",
+    "url":"https:\/\/www.youtube.com\/watch?v=K0mjUgHKfJo",
+    "videoID":"K0mjUgHKfJo",
+    "question_id":"055-1",
+    "task_type":"Counting Problem",
+    "question":"How many circles can be observed in the first few seconds of the video?",
+    "options":[
+      "A. Four.",
+      "B. Five.",
+      "C. Nine.",
+      "D. Six."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"055",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Geography",
+    "url":"https:\/\/www.youtube.com\/watch?v=K0mjUgHKfJo",
+    "videoID":"K0mjUgHKfJo",
+    "question_id":"055-2",
+    "task_type":"Spatial Reasoning",
+    "question":"Based on the information provided by the video, what is the reason for the phenomenon that the atmospheric temperature in some places is lower than the sea water temperature?",
+    "options":[
+      "A. Because the sea water in these palces absorbs less heat from the sun.",
+      "B. Because the sun releases less heat in these palces.",
+      "C. Because the current brings hot water from a warmer place.",
+      "D. Because the current brings cold water from a colder place."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"055",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Geography",
+    "url":"https:\/\/www.youtube.com\/watch?v=K0mjUgHKfJo",
+    "videoID":"K0mjUgHKfJo",
+    "question_id":"055-3",
+    "task_type":"Object Reasoning",
+    "question":"What is the red color in the circle most likely to represent?",
+    "options":[
+      "A. Seriousness.",
+      "B. Blood.",
+      "C. Pain.",
+      "D. Heat."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"056",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Geography",
+    "url":"https:\/\/www.youtube.com\/watch?v=WmVLcj-XKnM",
+    "videoID":"WmVLcj-XKnM",
+    "question_id":"056-1",
+    "task_type":"Object Reasoning",
+    "question":"What does \"you\" in the video represent?",
+    "options":[
+      "A. Nature.",
+      "B. Human.",
+      "C. Animals.",
+      "D. Plants."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"056",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Geography",
+    "url":"https:\/\/www.youtube.com\/watch?v=WmVLcj-XKnM",
+    "videoID":"WmVLcj-XKnM",
+    "question_id":"056-2",
+    "task_type":"Object Recognition",
+    "question":"Which of the following elements does not appear in the video?",
+    "options":[
+      "A. Iceberg.",
+      "B. Moon.",
+      "C. Earth.",
+      "D. River."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"056",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Geography",
+    "url":"https:\/\/www.youtube.com\/watch?v=WmVLcj-XKnM",
+    "videoID":"WmVLcj-XKnM",
+    "question_id":"056-3",
+    "task_type":"Temporal Perception",
+    "question":"According to the video, what is the focal point in the scene referred to as \"thrive\" by the speaker?",
+    "options":[
+      "A. Mountain.",
+      "B. Forest.",
+      "C. River.",
+      "D. Mushroom."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"057",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Geography",
+    "url":"https:\/\/www.youtube.com\/watch?v=zBnKgwnn7i4",
+    "videoID":"zBnKgwnn7i4",
+    "question_id":"057-1",
+    "task_type":"Object Reasoning",
+    "question":"According to the video, what do the three curved lines extending from bottom up symbolize?",
+    "options":[
+      "A. Heat flow.",
+      "B. Stream.",
+      "C. Vapor.",
+      "D. Air."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"057",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Geography",
+    "url":"https:\/\/www.youtube.com\/watch?v=zBnKgwnn7i4",
+    "videoID":"zBnKgwnn7i4",
+    "question_id":"057-2",
+    "task_type":"Temporal Reasoning",
+    "question":"What is the correct sequence of events in the formation of rain?",
+    "options":[
+      "A. Evaporation, condensation and then the raindrop forms.",
+      "B. Condense, evapor and then the raindrop forms.",
+      "C. The raindrop forms, evapors and then condenses.",
+      "D. The raindrop forms, condenses and then evapors."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"057",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Geography",
+    "url":"https:\/\/www.youtube.com\/watch?v=zBnKgwnn7i4",
+    "videoID":"zBnKgwnn7i4",
+    "question_id":"057-3",
+    "task_type":"Object Reasoning",
+    "question":"Which of the following statement is true according to the video?",
+    "options":[
+      "A. The raindrop continues to grow up after leaving the cloud.",
+      "B. The cloud is made of water vapor.",
+      "C. The river flows towards the left part of the image in the video.",
+      "D. Rivers don't take part in the process of water cycles."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"058",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Geography",
+    "url":"https:\/\/www.youtube.com\/watch?v=D52rTzibFRc",
+    "videoID":"D52rTzibFRc",
+    "question_id":"058-1",
+    "task_type":"Spatial Reasoning",
+    "question":"Based on the information provided by the video, which one is the most direct cause of the phenomenon that the smoke flows towards the lamp?",
+    "options":[
+      "A. Light makes the smoke more obvious to our eyes.",
+      "B. Near the lamp, the temperature rises.",
+      "C. There is a vacuum cleaner near the lamp.",
+      "D. The lamps attracts insects and the flying insects fan the smoke towards the lamp."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"058",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Geography",
+    "url":"https:\/\/www.youtube.com\/watch?v=D52rTzibFRc",
+    "videoID":"D52rTzibFRc",
+    "question_id":"058-2",
+    "task_type":"Attribute Perception",
+    "question":"Which color are the mountains in the video?",
+    "options":[
+      "A. Brown.",
+      "B. Blue.",
+      "C. Green.",
+      "D. Purple."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"058",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Geography",
+    "url":"https:\/\/www.youtube.com\/watch?v=D52rTzibFRc",
+    "videoID":"D52rTzibFRc",
+    "question_id":"058-3",
+    "task_type":"Spatial Reasoning",
+    "question":"What is one of the causes of wind according to the video?",
+    "options":[
+      "A. The sun is like a lamp.",
+      "B. The sea is cooler than the ground, and thus the sea wind forms.",
+      "C. The earth's rotaion changes as it orbits, and thus the temperature in a certain place changes.",
+      "D. The sun generates solar winds."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"059",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Geography",
+    "url":"https:\/\/www.youtube.com\/watch?v=NEFG7YcIDcI",
+    "videoID":"NEFG7YcIDcI",
+    "question_id":"059-1",
+    "task_type":"Object Recognition",
+    "question":"Which ocean do the thunderstorms in the video need to cross before they reach America?",
+    "options":[
+      "A. The Atlantic ocean.",
+      "B. The Pacific Ocean.",
+      "C. The Indian Ocean.",
+      "D. The Arctic Ocean."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"059",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Geography",
+    "url":"https:\/\/www.youtube.com\/watch?v=NEFG7YcIDcI",
+    "videoID":"NEFG7YcIDcI",
+    "question_id":"059-2",
+    "task_type":"Attribute Perception",
+    "question":"What does the speaker in the video dress like?",
+    "options":[
+      "A. Black jacket and blue trousers.",
+      "B. Blue jacket and black trousers.",
+      "C. Blue hat and black jacket.",
+      "D. Gray hat and black jacket."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"059",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Geography",
+    "url":"https:\/\/www.youtube.com\/watch?v=NEFG7YcIDcI",
+    "videoID":"NEFG7YcIDcI",
+    "question_id":"059-3",
+    "task_type":"Object Reasoning",
+    "question":"Which of the following statement is true according to the video?",
+    "options":[
+      "A. The wind in eye wall is calmer than outside.",
+      "B. The eye of hurricane has the most violent wind.",
+      "C. The hurricane can't be seen form the outer space.",
+      "D. The hurricane won't grow when the temperature is too high."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"060",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Geography",
+    "url":"https:\/\/www.youtube.com\/watch?v=8TNPeimqOO0",
+    "videoID":"8TNPeimqOO0",
+    "question_id":"060-1",
+    "task_type":"Object Recognition",
+    "question":"Which element doesn't show up in the video?",
+    "options":[
+      "A. Iceberg.",
+      "B. Orcas.",
+      "C. Sea bird.",
+      "D. Polar bear."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"060",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Geography",
+    "url":"https:\/\/www.youtube.com\/watch?v=8TNPeimqOO0",
+    "videoID":"8TNPeimqOO0",
+    "question_id":"060-2",
+    "task_type":"Attribute Perception",
+    "question":"According to the video, which of the following statements is not correct?",
+    "options":[
+      "A. The report is about the biggest iceberg that forms recently.",
+      "B. The iceberg is much bigger than New York city.",
+      "C. The departure of the iceberg may block penguin colonies.",
+      "D. Dereck Mueller wears red plaid shirt in the report."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"060",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Geography",
+    "url":"https:\/\/www.youtube.com\/watch?v=8TNPeimqOO0",
+    "videoID":"8TNPeimqOO0",
+    "question_id":"060-3",
+    "task_type":"Spatial Reasoning",
+    "question":"Which of the following facts is not caused by the iceberg mentioned in the video?",
+    "options":[
+      "A. Orcas and sea birds around the iceberg become more active.",
+      "B. South Georgia Islands is affected.",
+      "C. The thick mist at sea near the melting iceberg.",
+      "D. Sea level may rises a little bit."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"061",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Law",
+    "url":"https:\/\/www.youtube.com\/watch?v=LCtOpCi5r2s",
+    "videoID":"LCtOpCi5r2s",
+    "question_id":"061-1",
+    "task_type":"Counting Problem",
+    "question":"How many red flags appear in the video?",
+    "options":[
+      "A. 7.",
+      "B. 6.",
+      "C. 8.",
+      "D. 5."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"061",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Law",
+    "url":"https:\/\/www.youtube.com\/watch?v=LCtOpCi5r2s",
+    "videoID":"LCtOpCi5r2s",
+    "question_id":"061-2",
+    "task_type":"Object Recognition",
+    "question":"Which item was not featured in the video?",
+    "options":[
+      "A. Balance scale.",
+      "B. Traffic light.",
+      "C. Gavel.",
+      "D. Magnifying glass."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"061",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Law",
+    "url":"https:\/\/www.youtube.com\/watch?v=LCtOpCi5r2s",
+    "videoID":"LCtOpCi5r2s",
+    "question_id":"061-3",
+    "task_type":"OCR Problems",
+    "question":"What is the website that appears at the end of the video?",
+    "options":[
+      "A. LEXANIMATA.COM.",
+      "B. HESHAM.COM.",
+      "C. ELRAFEI.COM.",
+      "D. HESHAMELRAFEI.COM."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"062",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Law",
+    "url":"https:\/\/www.youtube.com\/watch?v=jTzKgI68VLc",
+    "videoID":"jTzKgI68VLc",
+    "question_id":"062-1",
+    "task_type":"Spatial Perception",
+    "question":"In what order did the movement occur in the focused image within the video?",
+    "options":[
+      "A. It moved from the bottom right to the top right, then to the center, then to the top left, then to the bottom left, and finally it moved to the center bottom.",
+      "B. It moved from the bottom left to the top left, then to the top right, then to the bottom right, and finally it moved to the center.",
+      "C. It moved from the bottom left to the top left, then to the center, then to the top right, then to the bottom right, and finally it moved to the center bottom.",
+      "D. It moved from the top left to the bottom left, then to the center, then to the top right, then to the bottom right, and finally it moved to the center bottom."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"062",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Law",
+    "url":"https:\/\/www.youtube.com\/watch?v=jTzKgI68VLc",
+    "videoID":"jTzKgI68VLc",
+    "question_id":"062-2",
+    "task_type":"OCR Problems",
+    "question":"Which of the following keywords was not mentioned in the video?",
+    "options":[
+      "A. World Law.",
+      "B. World War.",
+      "C. World Police.",
+      "D. World Court."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"062",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Law",
+    "url":"https:\/\/www.youtube.com\/watch?v=jTzKgI68VLc",
+    "videoID":"jTzKgI68VLc",
+    "question_id":"062-3",
+    "task_type":"OCR Problems",
+    "question":"What information is shown in the video regarding Portugal's GDP?",
+    "options":[
+      "A. Portugal's GDP for the year 2020 is $350 billion USD.",
+      "B. Portugal's GDP for the year 2021 is $350 billion USD.",
+      "C. Portugal's GDP for the year 2020 is $230 billion USD.",
+      "D. Portugal's GDP for the year 2021 is $250 billion USD."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"063",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Law",
+    "url":"https:\/\/www.youtube.com\/watch?v=eTLMWnsStuk",
+    "videoID":"eTLMWnsStuk",
+    "question_id":"063-1",
+    "task_type":"Counting Problem",
+    "question":"How many individuals are visible in the introductory shot of the video?",
+    "options":[
+      "A. 5.",
+      "B. 6.",
+      "C. 7.",
+      "D. 4."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"063",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Law",
+    "url":"https:\/\/www.youtube.com\/watch?v=eTLMWnsStuk",
+    "videoID":"eTLMWnsStuk",
+    "question_id":"063-2",
+    "task_type":"Attribute Perception",
+    "question":"What is the fate of the double-story building showcased in the video?",
+    "options":[
+      "A. The building in the video is letting out air-conditioning.",
+      "B. The building is hit by artillery shells.",
+      "C. The building is normal and nothing is happening.",
+      "D. The building is on fire and smoke is pouring out."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"063",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Law",
+    "url":"https:\/\/www.youtube.com\/watch?v=eTLMWnsStuk",
+    "videoID":"eTLMWnsStuk",
+    "question_id":"063-3",
+    "task_type":"Information Synopsis",
+    "question":"What does this video introduce?",
+    "options":[
+      "A. American Civil War.",
+      "B. The Prize Cases.",
+      "C. Age of Discovery.",
+      "D. President election."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"064",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Law",
+    "url":"https:\/\/www.youtube.com\/watch?v=9_M4bNOxsYs",
+    "videoID":"9_M4bNOxsYs",
+    "question_id":"064-1",
+    "task_type":"Information Synopsis",
+    "question":"Which option best represents the main topic of this video?",
+    "options":[
+      "A. Laws of different countries.",
+      "B. System differences in different countries.",
+      "C. Common law and civil law.",
+      "D. Legal development process."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"064",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Law",
+    "url":"https:\/\/www.youtube.com\/watch?v=9_M4bNOxsYs",
+    "videoID":"9_M4bNOxsYs",
+    "question_id":"064-2",
+    "task_type":"Action Recognition",
+    "question":"What are the people wearing a white shirt and a person wearing a black shirt doing together in the video?",
+    "options":[
+      "A. Confrontation.",
+      "B. Dancing.",
+      "C. Shake hands.",
+      "D. Running."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"064",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Law",
+    "url":"https:\/\/www.youtube.com\/watch?v=9_M4bNOxsYs",
+    "videoID":"9_M4bNOxsYs",
+    "question_id":"064-3",
+    "task_type":"Object Reasoning",
+    "question":"What is the identity of the individual sitting in the center of the video, wearing glasses, and holding a small hammer?",
+    "options":[
+      "A. Clerk.",
+      "B. Worker.",
+      "C. Defense counsel.",
+      "D. Judge."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"065",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Law",
+    "url":"https:\/\/www.youtube.com\/watch?v=fo-mVfOsC-E",
+    "videoID":"fo-mVfOsC-E",
+    "question_id":"065-1",
+    "task_type":"Information Synopsis",
+    "question":"What topic is introduced in the video?",
+    "options":[
+      "A. Types of cases handled by courts.",
+      "B. The roles of different people in court.",
+      "C. The process of courtroom trial.",
+      "D. A criminal case."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"065",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Law",
+    "url":"https:\/\/www.youtube.com\/watch?v=fo-mVfOsC-E",
+    "videoID":"fo-mVfOsC-E",
+    "question_id":"065-2",
+    "task_type":"Object Reasoning",
+    "question":"What is the role of the woman in the video with short hair, wearing a black top, and donning a white scarf?",
+    "options":[
+      "A. Clerk.",
+      "B. Defense lawyer.",
+      "C. Judge.",
+      "D. Accused."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"065",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Law",
+    "url":"https:\/\/www.youtube.com\/watch?v=fo-mVfOsC-E",
+    "videoID":"fo-mVfOsC-E",
+    "question_id":"065-3",
+    "task_type":"Counting Problem",
+    "question":"How many people can be seen holding cameras in the video?",
+    "options":[
+      "A. 2.",
+      "B. 3.",
+      "C. 4.",
+      "D. 1."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"066",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Law",
+    "url":"https:\/\/www.youtube.com\/watch?v=x6jPuXwtxCM",
+    "videoID":"x6jPuXwtxCM",
+    "question_id":"066-1",
+    "task_type":"Attribute Perception",
+    "question":"What are the colors of the three doors that appear in the video?",
+    "options":[
+      "A. Yellow, black, blue.",
+      "B. White, black, green.",
+      "C. Black, yellow, blue.",
+      "D. Red, black, blue."
+    ],
+    "answer":"D"
+  },
+  {
+    "video_id":"066",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Law",
+    "url":"https:\/\/www.youtube.com\/watch?v=x6jPuXwtxCM",
+    "videoID":"x6jPuXwtxCM",
+    "question_id":"066-2",
+    "task_type":"Action Recognition",
+    "question":"What is the man doing at the beginning of the video?",
+    "options":[
+      "A. Walking.",
+      "B. Running.",
+      "C. Dancing.",
+      "D. Not mentioned."
+    ],
+    "answer":"B"
+  },
+  {
+    "video_id":"066",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Law",
+    "url":"https:\/\/www.youtube.com\/watch?v=x6jPuXwtxCM",
+    "videoID":"x6jPuXwtxCM",
+    "question_id":"066-3",
+    "task_type":"Object Recognition",
+    "question":"What is the object that appears after the red door opens in the video?",
+    "options":[
+      "A. A bird.",
+      "B. A large building.",
+      "C. A helicopter.",
+      "D. An oil drum."
+    ],
+    "answer":"C"
+  },
+  {
+    "video_id":"067",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Law",
+    "url":"https:\/\/www.youtube.com\/watch?v=yXNShWnon4g",
+    "videoID":"yXNShWnon4g",
+    "question_id":"067-1",
+    "task_type":"Object Reasoning",
+    "question":"What is the name of the island that is shown at the start of the video?",
+    "options":[
+      "A. Ireland.",
+      "B. England.",
+      "C. Scotland.",
+      "D. Greenland."
+    ],
+    "answer":"A"
+  },
+  {
+    "video_id":"067",
+    "duration":"short",
+    "domain":"Knowledge",
+    "sub_category":"Law",
+    "url":"https:\/\/www.youtube.com\/watch?v=yXNShWnon4g",
+    "videoID":"yXNShWnon4g",
+    "question_id":"067-2",
+    "task_type":"Attribute Perception",
+    "question":"What is the color of the pencils that individuals are grasping for drawing in the video?",
+    "options":[
+      "A. Green.",
+      "B. Red.",
+      "C. Yellow.",
+      "D. Blue."
+    ],
+    "answer":"D"
+  }
+]

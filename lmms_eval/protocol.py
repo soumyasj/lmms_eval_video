@@ -107,6 +107,9 @@ class ChatMessages(BaseModel):
                         }
                     )
                 elif content.type == "video":
+                    
+                    #hard coding pass_video_url as true to get video_pad tokens
+                    # pass_video_url = True
                     if pass_video_url:
                         # Forward the video as a URL so the server can decode it (e.g., vLLM's
                         # media_io_kwargs). Local paths are normalized to file:// so absolute-time

@@ -591,6 +591,9 @@ def cli_evaluate_single(args: Union[argparse.Namespace, None] = None) -> None:
         args.hf_hub_log_args += f",token={os.environ.get('HF_TOKEN')}"
 
     evaluation_tracker_args = simple_parse_args_string(args.hf_hub_log_args)
+    # reuse --log_samples_suffix as a filename prefix (skip the default sentinel value)
+    if args.log_samples_suffix and args.log_samples_suffix != "model_outputs":
+        evaluation_tracker_args["filename_prefix"] = args.log_samples_suffix
     eval_logger.info(f"Evaluation tracker args: {evaluation_tracker_args}")
 
     evaluation_tracker = EvaluationTracker(**evaluation_tracker_args)
