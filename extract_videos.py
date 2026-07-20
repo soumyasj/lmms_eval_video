@@ -1,4 +1,7 @@
-import os, zipfile, glob, sys
+import glob
+import os
+import sys
+import zipfile
 
 HF_HOME = "/mnt/lustre/work/kuehne/kqr828/.cache/huggingface"
 cache_dir = os.path.join(HF_HOME, "video_mmmu")
@@ -20,7 +23,7 @@ for zf in zips:
     print(f"done {os.path.basename(zf)}", flush=True)
 
 # report
-for sub in ["Art","Science","Humanities","Engineering","Medicine","Business","question_only"]:
+for sub in ["Art", "Science", "Humanities", "Engineering", "Medicine", "Business", "question_only"]:
     d = os.path.join(cache_dir, sub)
     n = len(glob.glob(os.path.join(d, "*.mp4"))) if os.path.isdir(d) else 0
     print(f"{sub}: {n} mp4", flush=True)

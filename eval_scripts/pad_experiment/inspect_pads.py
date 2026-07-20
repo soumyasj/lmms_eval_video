@@ -88,10 +88,7 @@ def main() -> None:
     report(f"IMAGE_PAD path (--model vllm, nframes={args.nframes})", img_prompt)
     report("VIDEO_PAD path (--model vllm_video_url)", vid_prompt)
 
-    print(
-        "\nTakeaway: image path scales vision blocks with nframes; video path is a single "
-        "native video block. Different block structure -> different tokenization -> can shift accuracy."
-    )
+    print("\nTakeaway: image path scales vision blocks with nframes; video path is a single " "native video block. Different block structure -> different tokenization -> can shift accuracy.")
 
 
 if __name__ == "__main__":

@@ -10,10 +10,9 @@ Example:
 """
 
 import torch
-from transformers import AutoProcessor, Qwen2_5_VLForConditionalGeneration
-from qwen_vl_utils import process_vision_info
-
 import utils
+from qwen_vl_utils import process_vision_info
+from transformers import AutoProcessor, Qwen2_5_VLForConditionalGeneration
 
 
 def load_model(args):
@@ -54,12 +53,8 @@ def run_inference(model, processor, video_path, prompt, args):
         }
     )
 
-    text = processor.apply_chat_template(
-        messages, tokenize=False, add_generation_prompt=True
-    )
-    image_inputs, video_inputs, video_kwargs = process_vision_info(
-        messages, return_video_kwargs=True
-    )
+    text = processor.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+    image_inputs, video_inputs, video_kwargs = process_vision_info(messages, return_video_kwargs=True)
     inputs = processor(
         text=[text],
         images=image_inputs,
@@ -71,10 +66,7 @@ def run_inference(model, processor, video_path, prompt, args):
     inputs = inputs.to(model.device)
 
     generated_ids = model.generate(**inputs, max_new_tokens=args.max_new_tokens)
-    generated_ids_trimmed = [
-        out_ids[len(in_ids):]
-        for in_ids, out_ids in zip(inputs.input_ids, generated_ids)
-    ]
+    generated_ids_trimmed = [out_ids[len(in_ids) :] for in_ids, out_ids in zip(inputs.input_ids, generated_ids)]
     output_text = processor.batch_decode(
         generated_ids_trimmed,
         skip_special_tokens=True,
@@ -89,9 +81,7 @@ def main():
 
     docs = utils.load_docs(args.json, args.limit)
 
-    sampling_desc = (
-        f"nframes={args.nframes}" if args.nframes is not None else f"fps={args.fps}"
-    )
+    sampling_desc = f"nframes={args.nframes}" if args.nframes is not None else f"fps={args.fps}"
     print(f"Loaded {len(docs)} questions from {args.json}")
     print(f"Prompt style: {args.prompt_style}")
     print(f"Video sampling: {sampling_desc}, max_pixels={args.max_pixels}")
@@ -152,11 +142,7 @@ def main():
         )
 
         running_acc = correct / evaluated if evaluated else 0.0
-        print(
-            f"[{i + 1}/{len(docs)}] {doc.get('question_id')} "
-            f"pred={pred_ans} gt={gt_ans} {'✓' if is_correct else '✗'} "
-            f"(running acc {running_acc:.3f})"
-        )
+        print(f"[{i + 1}/{len(docs)}] {doc.get('question_id')} " f"pred={pred_ans} gt={gt_ans} {'✓' if is_correct else '✗'} " f"(running acc {running_acc:.3f})")
 
     summary = utils.build_summary(args, len(docs), evaluated, correct, by_group)
     utils.print_summary(summary)

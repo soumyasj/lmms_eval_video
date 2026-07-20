@@ -40,20 +40,12 @@ extract_mcq_answer = _mcq.extract_mcq_answer
 #                system message).
 PROMPT_STYLES = {
     "lmms": {
-        "option_prompt": (
-            "Select the best answer to the following multiple-choice question "
-            "based on the video and the subtitles. Respond with only the letter "
-            "(A, B, C, or D) of the correct option."
-        ),
+        "option_prompt": ("Select the best answer to the following multiple-choice question " "based on the video and the subtitles. Respond with only the letter " "(A, B, C, or D) of the correct option."),
         "post_prompt": "\nAnswer with the option's letter from the given choices directly.",
         "system_prompt": "You are a helpful assistant.",
     },
     "standalone": {
-        "option_prompt": (
-            "Select the best answer to the following multiple-choice question "
-            "based on the video. Respond with only the letter (A, B, C, or D) "
-            "of the correct option."
-        ),
+        "option_prompt": ("Select the best answer to the following multiple-choice question " "based on the video. Respond with only the letter (A, B, C, or D) " "of the correct option."),
         "post_prompt": "The best answer is:",
         "system_prompt": None,
     },
@@ -109,18 +101,13 @@ def build_summary(args, num_questions, evaluated, correct, by_group):
     return {
         "model": args.model,
         "prompt_style": args.prompt_style,
-        "sampling": (
-            {"nframes": args.nframes} if args.nframes is not None else {"fps": args.fps}
-        ),
+        "sampling": ({"nframes": args.nframes} if args.nframes is not None else {"fps": args.fps}),
         "max_pixels": args.max_pixels,
         "num_questions": num_questions,
         "evaluated": evaluated,
         "correct": correct,
         "overall_accuracy": overall_acc,
-        "breakdown": {
-            k: {**v, "accuracy": v["correct"] / v["total"] if v["total"] else 0.0}
-            for k, v in sorted(by_group.items())
-        },
+        "breakdown": {k: {**v, "accuracy": v["correct"] / v["total"] if v["total"] else 0.0} for k, v in sorted(by_group.items())},
     }
 
 
@@ -142,10 +129,7 @@ def update_groups(by_group, doc, is_correct):
 
 def print_summary(summary):
     print("\n===== Summary =====")
-    print(
-        f"Overall accuracy: {summary['overall_accuracy']:.4f} "
-        f"({summary['correct']}/{summary['evaluated']})"
-    )
+    print(f"Overall accuracy: {summary['overall_accuracy']:.4f} " f"({summary['correct']}/{summary['evaluated']})")
     for k, v in summary["breakdown"].items():
         print(f"  {k:40s} {v['accuracy']:.4f} ({v['correct']}/{v['total']})")
 
@@ -187,16 +171,14 @@ def parse_args():
         "--prompt-style",
         choices=list(PROMPT_STYLES.keys()),
         default="lmms",
-        help="'lmms' mirrors the lmms_eval videomme/qwen2_5_vl prompt (default); "
-        "'standalone' uses this script's original frames-only prompt.",
+        help="'lmms' mirrors the lmms_eval videomme/qwen2_5_vl prompt (default); " "'standalone' uses this script's original frames-only prompt.",
     )
     parser.add_argument("--fps", type=float, default=1.0)
     parser.add_argument(
         "--nframes",
         type=int,
         default=None,
-        help="Fixed number of frames to sample per video. Mutually exclusive "
-        "with --fps; when set, --fps is ignored.",
+        help="Fixed number of frames to sample per video. Mutually exclusive " "with --fps; when set, --fps is ignored.",
     )
     parser.add_argument(
         "--max-pixels",
@@ -211,9 +193,7 @@ def parse_args():
         action="store_true",
         help="Use flash_attention_2 (requires flash-attn installed).",
     )
-    parser.add_argument(
-        "--limit", type=int, default=None, help="Only evaluate the first N questions."
-    )
+    parser.add_argument("--limit", type=int, default=None, help="Only evaluate the first N questions.")
     parser.add_argument(
         "--output",
         default=None,
