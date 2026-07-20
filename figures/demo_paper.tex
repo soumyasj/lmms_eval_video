@@ -1,0 +1,51 @@
+% Minimal ICLR/NeurIPS-like host document: shows the figure and the companion
+% table in a 5.5in single column, with a camera-ready caption.
+%   pdflatex -output-directory=figures figures/demo_paper.tex
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,textwidth=5.5in,textheight=9in]{geometry}
+\usepackage{mathptmx}
+\usepackage{helvet}
+\usepackage{courier}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{positioning,calc,arrows.meta}
+\usepackage[font=small,labelfont=bf]{caption}
+
+\begin{document}
+
+\begin{figure}[t]
+\centering
+\input{eval_pipeline}
+\caption{\textbf{Everything between a video and a reported accuracy is
+configuration.} A VideoMME row is an \texttt{mp4} path, a question, four options
+and a gold letter; the eight stages above turn it into one number. Each panel
+lists the settings that act at that stage, the module that reads them, and
+(in the tinted strip) the representation leaving the stage. Markers~(\warnmark)
+flag settings whose effect does not follow from their name: several are silently
+ignored, silently clamped, or resolved as a floor rather than a cap. Frame count
+and per-frame resolution are set entirely from \texttt{-{}-model\_args}, never
+from the task YAML, and together they determine the context length paid at
+stage~5. Values shown are those of our Qwen2.5-VL-7B-Instruct configuration
+(vLLM 0.11.0, qwen-vl-utils 0.0.14, torchcodec reader).}
+\label{fig:eval-pipeline}
+\end{figure}
+
+\begin{table}[t]
+\centering
+\caption{\textbf{Where an unexplained gap between two evaluation runs comes
+from}, ordered by the size of the effect we observe. Stage numbers refer to
+Figure~\ref{fig:eval-pipeline}.}
+\label{tab:knobs}
+\input{knob_table}
+\end{table}
+
+\noindent Reported video-QA accuracies are rarely accompanied by the
+configuration that produced them. Figure~\ref{fig:eval-pipeline} enumerates the
+settings that a single VideoMME evaluation actually depends on, and
+Table~\ref{tab:knobs} orders them by how far they move the reported number.
+
+\end{document}

@@ -1,0 +1,157 @@
+% ---------------------------------------------------------------------------
+% Video-QA evaluation pipeline: every configuration knob, stage by stage.
+% Drop-in TikZ figure for ICLR / NeurIPS (single column, 5.5in = 13.97cm).
+% Native width 13.56cm; nothing is scaled, so all type keeps its stated size.
+%
+% Requires in the host preamble:
+%   \usepackage{tikz}\usetikzlibrary{positioning,calc,arrows.meta}
+%   \usepackage{xcolor,amsmath}
+% Usage:
+%   \begin{figure}[t]\centering\input{figures/eval_pipeline}\caption{...}\end{figure}
+% ---------------------------------------------------------------------------
+
+% --- palette --------------------------------------------------------------
+% Hues encode the sub-system; stage order and the accent rule carry the same
+% information in grayscale, so the figure survives a b/w print.
+\definecolor{cSrc}{RGB}{176,107,13}   % source & data
+\definecolor{cVis}{RGB}{21,125,116}   % vision path
+\definecolor{cTxt}{RGB}{94,75,192}    % text path
+\definecolor{cGen}{RGB}{192,74,42}    % inference
+\definecolor{cOut}{RGB}{94,122,16}    % scoring
+\definecolor{cInk}{RGB}{28,27,31}
+\definecolor{cInkTwo}{RGB}{95,92,102}
+
+% --- helpers --------------------------------------------------------------
+\providecommand{\kn}[1]{\texttt{#1}}
+\providecommand{\warnmark}{{\setlength{\fboxsep}{.5pt}%
+  \raisebox{.15ex}{\colorbox{cGen}{\textcolor{white}{%
+  \fontsize{3.8}{3.8}\selectfont\bfseries\sffamily !}}}}}
+\providecommand{\sep}{\,\textcolor{cInkTwo}{\textperiodcentered}\,\allowbreak}
+
+\begingroup
+\begin{tikzpicture}[
+  font=\sffamily, x=1cm, y=1cm,
+  stagenode/.style={
+    rectangle, draw, line width=.35pt, rounded corners=.9pt,
+    text width=3.12cm, minimum height=3.90cm, inner sep=0pt,
+    anchor=north west, text=cInk},
+  payload/.style={
+    rectangle, draw=none, text width=3.12cm, align=left,
+    inner xsep=2.6pt, inner ysep=2.2pt, anchor=north west,
+    font=\ttfamily\fontsize{5.0}{6.0}\selectfont},
+  flow/.style={-{Straight Barb[length=1.6pt,width=2.4pt]},
+               line width=.5pt, draw=cInkTwo},
+]
+
+% ------------------------------------------------------------- geometry ---
+\def\bw{3.12}     % box width
+\def\dx{3.48}     % column pitch (box + 0.36 gap)  -> total 13.56cm
+\def\bh{3.90}     % box height (uniform, so payload strips align)
+\def\rowA{0}
+\def\rowB{-4.95}
+\def\midY{-4.61}  % routing lane for the row-wrap cable
+
+% -------------------------------------------------------------- \stagebox --
+% #1 id  #2 x  #3 y  #4 accent  #5 stage no.  #6 title  #7 source location
+% #8 knob body  #9 payload leaving the stage
+\newcommand{\stagebox}[9]{%
+  \node[stagenode, fill=#4!6, draw=#4!50] (#1) at (#2,#3) {%
+    \begin{minipage}[t][\bh cm][t]{2.80cm}
+      \raggedright\setlength{\parindent}{0pt}%
+      \vspace{3.4pt}
+      {\fontsize{4.6}{4.6}\selectfont\bfseries\color{#4}STAGE~#5}\\[1.8pt]
+      {\fontsize{6.8}{7.4}\selectfont\bfseries #6}\\[1.6pt]
+      {\ttfamily\fontsize{4.8}{5.6}\selectfont\color{cInkTwo}#7}\\[3.0pt]
+      {\fontsize{5.5}{6.7}\selectfont\color{cInk}#8}
+    \end{minipage}};
+  \fill[#4] ([xshift=.35pt,yshift=-.35pt]#1.north west)
+    rectangle ([xshift=-.35pt,yshift=-1.5pt]#1.north east);
+  \node[payload, fill=#4!16, text=#4!60!black] (#1out)
+    at ([yshift=-1.6pt]#1.south west) {\textbf{$\rightarrow$}~#9};
+}
+
+% ============================================================== ROW 1 ======
+\stagebox{s0}{0}{\rowA}{cSrc}{0}{Dataset row}{tasks/videomme/utils.py}{%
+  \kn{-{}-tasks}\sep picks \kn{\_w\_subtitle}, \kn{\_long}, \kn{\_no\_visual}\\[2.2pt]
+  \kn{data\_files}\sep 200-row local parquet vs.\ 2{,}700 upstream\\[2.2pt]
+  \kn{-{}-limit}, \kn{-{}-offset}, \kn{test\_split}, \kn{HF\_HOME}%
+}{doc + /path/<id>.mp4}
+
+\stagebox{s1}{\dx}{\rowA}{cVis}{1}{Temporal sampling}{qwen\_vl\_utils:smart\_nframes}{%
+  \kn{nframes}\,$=32$\sep fixed count, evenly spaced over the whole clip\\[2.2pt]
+  \kn{fps}\,\warnmark\sep mutually exclusive: setting it drops \kn{nframes}\\[2.2pt]
+  \kn{FRAME\_FACTOR}\,$=2$\,\warnmark\sep counts round down to even%
+}{N x H0 x W0 x 3}
+
+\stagebox{s2}{2*\dx}{\rowA}{cVis}{2}{Spatial resize}{qwen\_vl\_utils:smart\_resize}{%
+  \kn{max\_pixels}\,$=301\,056$\,\warnmark\sep hard-clamped at $602\,112$ for video\\[2.2pt]
+  \kn{min\_pixels}\,$=200\,704$\sep smaller frames are upscaled\\[2.2pt]
+  sides snap to multiples of 28%
+}{N x H x W (mod 28)}
+
+\stagebox{s3}{3*\dx}{\rowA}{cVis}{3}{Serialization}{protocol.py:to\_openai\_msgs}{%
+  \kn{pass\_video\_url}\,$=$\,\kn{False}\,\warnmark\sep N \kn{<|image\_pad|>} blocks, not one \kn{<|video\_pad|>}\\[2.2pt]
+  not reachable from \kn{-{}-model vllm}\\[2.2pt]
+  \kn{LMMS\_IMAGE\_\allowbreak ENCODE\_FORMAT}\ $=$\ \kn{PNG}%
+}{N x base64 image\_url}
+
+% ============================================================== ROW 2 ======
+\stagebox{s4}{0}{\rowB}{cTxt}{4}{Prompt construction}{doc\_to\_text + kwargs}{%
+  \kn{post\_prompt}\sep ``Answer with the option's letter \dots\ directly.''\\[2.2pt]
+  subtitle preamble\,\warnmark\sep names subtitles even when none are passed\\[2.2pt]
+  profiles keyed by the literal \kn{-{}-model} string%
+}{messages[N imgs, text]}
+
+\stagebox{s5}{\dx}{\rowB}{cGen}{5}{Context budget}{chat template + vLLM engine}{%
+  \kn{max\_model\_len}\,$=32\,768$\sep too small truncates silently\\[2.2pt]
+  \kn{limit\_mm\_per\_prompt}\,\warnmark\sep \kn{\{"video":1\}} caps a modality that never reaches the engine\\[2.2pt]
+  \kn{gpu\_memory\_\allowbreak utilization}\ $=0.8$%
+}{$\approx$6144 vision tok}
+
+\stagebox{s6}{2*\dx}{\rowB}{cGen}{6}{Generation}{simple/vllm.py:sampling}{%
+  \kn{max\_new\_tokens}\,\warnmark\sep $\max$(task~16, model~4096) is a \emph{floor}, not a cap\\[2.2pt]
+  \kn{temperature}\,$=0$, \kn{top\_p}\,$=0.95$\\[2.2pt]
+  \kn{num\_beams}, \kn{do\_sample} are dropped in silence%
+}{"A" or essay $\supset$ "A"}
+
+\stagebox{s7}{3*\dx}{\rowB}{cOut}{7}{Parse \& score}{process\_results + metrics}{%
+  \kn{-{}-reasoning\_tags}\sep \kn{<think>} stripped before matching\\[2.2pt]
+  extraction regex is per task\sep bare letter vs.\ \kn{mcq\_acc}\\[2.2pt]
+  \kn{cluster\_key}\,$=$\,\kn{videoID} widens the SE, correctly%
+}{acc $=0.6150$ $\pm$ SE}
+
+% ============================================================== CABLES =====
+\draw[flow] (s0out.east) -- (s1.west |- s0out.east);
+\draw[flow] (s1out.east) -- (s2.west |- s1out.east);
+\draw[flow] (s2out.east) -- (s3.west |- s2out.east);
+\draw[flow] (s4out.east) -- (s5.west |- s4out.east);
+\draw[flow] (s5out.east) -- (s6.west |- s5out.east);
+\draw[flow] (s6out.east) -- (s7.west |- s6out.east);
+\draw[flow, rounded corners=2.4pt]
+  (s3out.south) -- (s3out.south |- 0,\midY)
+                -- (s4.north  |- 0,\midY) -- (s4.north);
+
+% ============================================================== FOOTER =====
+\node[anchor=north west, inner sep=0pt] at (0,-9.62) {%
+  \begin{minipage}{13.56cm}
+  \raggedright\setlength{\parindent}{0pt}%
+  \textcolor{cInkTwo}{\rule{13.56cm}{.35pt}}\\[4.0pt]
+  {\fontsize{6.0}{7.6}\selectfont\sffamily
+   \makebox[1.5em][l]{\warnmark}%
+   \textbf{Knobs that do not do what their name suggests.}~%
+   \kn{fps} and \kn{nframes} are mutually exclusive and never merged\sep
+   \kn{max\_frame\_num} is read only on the \kn{fps} branch\sep
+   odd frame counts round down (ask 7, get 6)\sep
+   \kn{max\_pixels} is silently clamped to $602\,112$ for video frames\sep
+   \kn{pass\_video\_url} cannot be reached from \kn{-{}-model vllm}\sep
+   \kn{max\_new\_tokens} is a floor, so \kn{-{}-gen\_kwargs} alone will not lower it.\\[4.5pt]
+   \makebox[1.5em][l]{\textcolor{cVis}{\bfseries$\Sigma$}}%
+   \textbf{Stages 1--2 fix the context bill paid at stage 5.}~%
+   $\text{vision\_tokens} \approx (\text{frames}/2)\times(\text{max\_pixels}/784)$,
+   where the $/2$ is the temporal patch merge and $784 = 28\!\times\!28$ pixels per token
+   after the $2\!\times\!2$ spatial merge; 32 frames at \kn{max\_pixels}\,$=301\,056$
+   is ${\approx}6{,}144$ vision tokens for a single multiple-choice question.}
+  \end{minipage}};
+
+\end{tikzpicture}
+\endgroup
