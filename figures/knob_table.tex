@@ -1,0 +1,25 @@
+% ---------------------------------------------------------------------------
+% Companion appendix table for figures/eval_pipeline.tex.
+% Full knob inventory, ordered by how much it moves the reported number.
+% Requires: \usepackage{booktabs}
+% Usage:  \begin{table}[t]\centering\input{figures/knob_table}\end{table}
+% ---------------------------------------------------------------------------
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.12}
+{\footnotesize
+\begin{tabular}{@{}c l c p{0.505\linewidth}@{}}
+\toprule
+\# & Knob & Stage & Why it moves the number \\
+\midrule
+1  & \texttt{nframes} / \texttt{fps}                & 1 & Fewer frames carry less temporal evidence. Mutually exclusive: setting \texttt{fps} silently disables \texttt{nframes}. \\
+2  & row set (\texttt{-{}-limit}, split, parquet)   & 0 & Different rows are not comparable at all; this checkout evaluates a 200-row subset, not the 2{,}700-row upstream split. \\
+3  & \texttt{image\_pad} vs.\ \texttt{video\_pad}   & 3 & A genuinely different input representation, hence different logits. Not toggleable from \texttt{-{}-model vllm}. \\
+4  & \texttt{max\_pixels} / \texttt{min\_pixels}    & 2 & Per-frame detail; silently clamped to $602\,112$ for video frames, so the requested value may not be the effective one. \\
+5  & \texttt{max\_new\_tokens}                      & 6 & Resolved as $\max(\text{task},\text{model})$, a floor rather than a cap: 4096 instead of 16 lets the model ramble past the letter the parser expects. \\
+6  & \texttt{FRAME\_FACTOR} rounding                & 1 & Frame counts round down to a multiple of two, so a run may use fewer frames than requested. \\
+7  & prompt text / subtitles                        & 4 & Wording changes behaviour; the VideoMME preamble names subtitles even on the variant that passes none. \\
+8  & \texttt{temperature}                           & 6 & Any value above zero makes the run non-reproducible. \\
+9  & video reader backend                           & 1 & torchcodec, decord and torchvision land on marginally different frame indices. \\
+10 & model snapshot / \texttt{chat\_template}       & 5 & Different weights or template change the tokenisation of every vision block. \\
+\bottomrule
+\end{tabular}}

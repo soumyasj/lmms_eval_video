@@ -1,0 +1,38 @@
+% Compiles figures/eval_pipeline.tex to a tightly-cropped one-page PDF
+% suitable for \includegraphics.  Written for a minimal TeX Live
+% (no standalone.cls, no pdfcrop): the page is resized to the figure box.
+%
+%   pdflatex -output-directory=figures figures/eval_pipeline_standalone.tex
+%
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}   % Times, as in the ICLR/NeurIPS styles
+\usepackage{helvet}
+\usepackage{courier}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{positioning,calc,arrows.meta,fit}
+\usepackage{textcomp}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\hoffset}{-1in}
+\setlength{\voffset}{-1in}
+\setlength{\oddsidemargin}{1mm}
+\setlength{\topmargin}{1mm}
+\setlength{\headheight}{0pt}
+\setlength{\headsep}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\textwidth}{100cm}
+\setlength{\textheight}{100cm}
+
+\newsavebox{\figbox}
+
+\begin{document}
+\sbox{\figbox}{\input{eval_pipeline}}%
+\pdfpagewidth=\dimexpr\wd\figbox+2mm\relax
+\pdfpageheight=\dimexpr\ht\figbox+\dp\figbox+2mm\relax
+\usebox{\figbox}%
+\end{document}
