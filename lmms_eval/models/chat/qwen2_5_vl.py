@@ -68,6 +68,7 @@ class Qwen2_5_VL(Qwen2_5_VLSimple):
             }
             if self.fps is not None:
                 video_kwargs["fps"] = self.fps
+                video_kwargs["max_frames"] = self.max_num_frames
             else:
                 # Probe videos to get frame count and set nframes = min(max_num_frames, total_frames)
                 # This avoids the error when video has fewer frames than max_num_frames
