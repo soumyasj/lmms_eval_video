@@ -1,4 +1,5 @@
 <div align="center">
+<img src="assets/metavideo_logo.png" alt="Meta-Video logo" width="220"><br>
 <h2>Meta-Video: Efficient Standardized Evaluation for Video Understanding</h2>
 <h3>Under review</h3>
 
