@@ -5,7 +5,12 @@ evaluation setup (frames, decoder, resolution, backend, batching) moves video-be
 and the home of **Meta-Video (`metav`)**, a 1000-item video benchmark built to rank models
 in minutes instead of hours.
 
-- [Meta-Video.pdf](./Meta-Video.pdf): the paper.
+**Paper** [Meta-Video.pdf](./Meta-Video.pdf) ·
+**Website** [soumyasj.github.io/meta-video](https://soumyasj.github.io/meta-video/) ·
+**Dataset** [soumyasj/Meta-Video](https://huggingface.co/datasets/soumyasj/Meta-Video) (questions + videos) ·
+**Non-blind splits** [soumyasj/video-benchmarks-nonblind](https://huggingface.co/datasets/soumyasj/video-benchmarks-nonblind)
+(the source benchmarks with every question that models answer correctly from black frames removed)
+
 - [FIXES.md](./FIXES.md): what was changed in `lmms_eval/` and why.
 - [README_upstream.md](./README_upstream.md): the original lmms-eval README (install, all tasks).
 - [VIDEO_BENCHMARKS_REFERENCE.md](./VIDEO_BENCHMARKS_REFERENCE.md): the video benchmarks as they behave here.
