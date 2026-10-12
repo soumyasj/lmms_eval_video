@@ -1,15 +1,36 @@
-# lmms_eval_video
+<div align="center">
+<h2>Meta-Video: Efficient Standardized Evaluation for Video Understanding</h2>
+<h3>Under review</h3>
+
+Soumya Shamarao Jahagirdar<sup>1</sup>&emsp;
+Anna Kukleva<sup>2</sup>&emsp;
+Vishaal Udandarao<sup>1</sup>&emsp;
+Samuel Thomas<sup>3</sup>&emsp;
+Brian Kingsbury<sup>3</sup>&emsp;
+Rogerio Feris<sup>3,5</sup>&emsp;
+James R. Glass<sup>4</sup>&emsp;
+Ameya Prabhu<sup>6</sup>&emsp;
+<a href="https://hildekuehne.github.io/">Hilde Kuehne</a><sup>1,5,6</sup><br>
+<sup>1</sup>University of Tübingen&emsp;<sup>2</sup>Meta&emsp;<sup>3</sup>IBM Research&emsp;<sup>4</sup>MIT&emsp;<sup>5</sup>MIT-IBM Watson AI Lab&emsp;<sup>6</sup>Tübingen AI Center<br><br>
+
+<a href='https://soumyasj.github.io/meta-video/'><img src='https://img.shields.io/badge/Project_Page-Page-64fefe' alt='Project Page'></a> &emsp;
+<a href='./Meta-Video.pdf'><img src='https://img.shields.io/badge/Paper-PDF-b31b1b' alt='Paper'></a> &emsp;
+<a href='https://huggingface.co/datasets/soumyasj/Meta-Video'><img src='https://img.shields.io/badge/🤗_Dataset-Meta--Video-ffd21e' alt='Meta-Video dataset'></a> &emsp;
+<a href='https://huggingface.co/datasets/soumyasj/video-benchmarks-nonblind'><img src='https://img.shields.io/badge/🤗_Dataset-Non--blind_splits-ffd21e' alt='Non-blind splits'></a>
+
+<p align="center">
+  <img src="assets/pipeline.png" width="800">
+</p>
+</div>
+
+---
 
 A fork of [lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval) for measuring how much the
 evaluation setup (frames, decoder, resolution, backend, batching) moves video-benchmark scores,
 and the home of **Meta-Video (`metav`)**, a 1000-item video benchmark built to rank models
-in minutes instead of hours.
-
-**Paper** [Meta-Video.pdf](./Meta-Video.pdf) ·
-**Website** [soumyasj.github.io/meta-video](https://soumyasj.github.io/meta-video/) ·
-**Dataset** [soumyasj/Meta-Video](https://huggingface.co/datasets/soumyasj/Meta-Video) (questions + videos) ·
-**Non-blind splits** [soumyasj/video-benchmarks-nonblind](https://huggingface.co/datasets/soumyasj/video-benchmarks-nonblind)
-(the source benchmarks with every question that models answer correctly from black frames removed)
+in minutes instead of hours. The companion dataset
+[soumyasj/video-benchmarks-nonblind](https://huggingface.co/datasets/soumyasj/video-benchmarks-nonblind)
+holds the source benchmarks with every question that models answer correctly from black frames removed.
 
 - [FIXES.md](./FIXES.md): what was changed in `lmms_eval/` and why.
 - [README_upstream.md](./README_upstream.md): the original lmms-eval README (install, all tasks).
