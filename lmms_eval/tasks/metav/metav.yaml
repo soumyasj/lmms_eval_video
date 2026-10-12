@@ -1,0 +1,9 @@
+group: metav
+task:
+- metav_videomme
+- metav_longvideobench_val_v
+- metav_lvbench
+- metav_vsibench
+- metav_video_mmmu_perception
+- metav_video_mmmu_comprehension
+- metav_video_mmmu_adaptation

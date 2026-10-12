@@ -1,0 +1,59 @@
+# Config for run_video_qa_hf_multigpu.sh — edit the values, then just run:
+#   bash eval_scripts/runners/run_video_qa_hf_multigpu.sh
+#
+# Any command-line flag overrides the value here, so you can keep this as your
+# baseline and do one-off runs with e.g. `--nframes 8 --limit 50`.
+# Use a different file with:  --config path/to/other.yaml
+# Leave a value empty (or delete the line) to fall back to the script default.
+
+model: Qwen/Qwen2.5-VL-7B-Instruct
+
+# backend: hf   -> plain transformers generate (eval_scripts default, slower).
+#          vllm -> vllm engine (paged attention + continuous batching, much
+#                  higher throughput; same answers). Needs vllm installed.
+backend: hf
+
+# video_reader: which qwen_vl_utils backend decodes video files
+# (sets FORCE_QWENVL_VIDEO_READER). One of: decord | torchvision | torchcodec
+# (torchcodec is qwen_vl_utils's own default if left empty).
+video_reader: decord #torchvision | torchcodec (default)
+
+# ---- frame sampling -------------------------------------------------------
+# sampling: nframes -> take exactly `nframes` frames, uniformly spaced.
+# sampling: fps     -> sample at `fps` frames/sec, then cap at `max_frames`.
+# These are mutually exclusive; `max_frames` is ignored in nframes mode.
+# NOTE: the vllm backend only supports nframes-style uniform sampling.
+sampling: nframes
+nframes: 64
+fps: 1
+max_frames: 32
+
+# ---- resolution (vision tokens per frame) ---------------------------------
+# tokens/frame ≈ max_pixels / 784.  Lower max_pixels if you hit OOM.
+max_pixels: 602112     # 602112,301056, 802816 OOMs at high frame counts
+min_pixels: 200704     # 256*28*28, model default (hf backend only)
+
+# ---- runtime --------------------------------------------------------------
+# num_gpus: how many data-parallel replicas (one full model copy per GPU,
+#           ~16GB each for a 7B in bf16). Empty = autodetect all visible GPUs.
+#           Set to 1 to force a plain single-process run.
+#           vllm backend: this becomes data_parallel_size (see tensor_parallel_size
+#           below for splitting one model across GPUs instead).
+num_gpus:              # empty = autodetect all visible GPUs
+main_port:             # accelerate rendezvous port; empty = derived from PID
+attn:                  # sdpa | flash_attention_2 | eager | empty for default (hf only)
+device_map: auto       # only used when num_gpus resolves to 1 (hf only)
+
+# ---- vllm backend only ------------------------------------------------------
+tensor_parallel_size: 1        # split one model replica across N GPUs (for big models)
+gpu_memory_utilization: 0.9    # fraction of GPU memory vllm may claim
+max_model_len: 32768           # vllm KV-cache budget; lower if you hit OOM
+max_num_seqs: 8                # vllm's in-flight request batch size
+
+# ---- evaluation -----------------------------------------------------------
+tasks: videomme
+batch_size: 1
+max_new_tokens:        # empty = use the task yaml's generation_kwargs
+limit:                 # int, or float 0-1 for a fraction; empty = all samples
+run_tag:               # empty = auto: <model>_<tasks>_<sampling>_mp<max_pixels>_<backend>_vr<video_reader>_bs<N>_<YYYYmmdd_HHMMSS>
+output_root: ./logs/normalized_runs/video_qa_hf
