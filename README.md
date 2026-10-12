@@ -5,6 +5,7 @@ evaluation setup (frames, decoder, resolution, backend, batching) moves video-be
 and the home of **Meta-Video (`metav`)**, a 1000-item video benchmark built to rank models
 in minutes instead of hours.
 
+- [Meta-Video.pdf](./Meta-Video.pdf): the paper.
 - [FIXES.md](./FIXES.md): what was changed in `lmms_eval/` and why.
 - [README_upstream.md](./README_upstream.md): the original lmms-eval README (install, all tasks).
 - [VIDEO_BENCHMARKS_REFERENCE.md](./VIDEO_BENCHMARKS_REFERENCE.md): the video benchmarks as they behave here.
