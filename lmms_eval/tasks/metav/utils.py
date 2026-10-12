@@ -223,10 +223,25 @@ def _to_source_doc(task: str, r: dict) -> dict:
     opts = list(r["options"] or [])
     base = {"metav_id": r["id"], "metav_video": r["video"]}
     if task == "videomme":
-        d = dict(video_id=sid.split("-")[0], duration=c["duration"], domain=c["domain"], sub_category=c["sub_category"], url=None, videoID=stem, question_id=sid, task_type=c["task_type"], question=r["question"], options=opts, answer=r["answer"])
+        d = dict(
+            video_id=sid.split("-")[0], duration=c["duration"], domain=c["domain"], sub_category=c["sub_category"], url=None, videoID=stem, question_id=sid, task_type=c["task_type"], question=r["question"], options=opts, answer=r["answer"]
+        )
     elif task == "longvideobench_val_v":
         texts = opts + ["N/A"] * (5 - len(opts))
-        d = dict(video_id=sid.rsplit("_", 1)[0], id=sid, video_path=fname, subtitle_path=f"{stem}_en.json", correct_choice=ord(r["answer"]) - ord("A"), question=r["question"], **{f"option{i}": texts[i] for i in range(5)}, duration=float(r["duration_s"]), duration_group=int(c["duration_group"]), question_category=c["question_category"], topic_category=c["topic_category"], starting_timestamp_for_subtitles=0.0)
+        d = dict(
+            video_id=sid.rsplit("_", 1)[0],
+            id=sid,
+            video_path=fname,
+            subtitle_path=f"{stem}_en.json",
+            correct_choice=ord(r["answer"]) - ord("A"),
+            question=r["question"],
+            **{f"option{i}": texts[i] for i in range(5)},
+            duration=float(r["duration_s"]),
+            duration_group=int(c["duration_group"]),
+            question_category=c["question_category"],
+            topic_category=c["topic_category"],
+            starting_timestamp_for_subtitles=0.0,
+        )
     elif task == "lvbench":  # the source keeps the "(A) ..." option lines inside the question text
         qt = c["question_type"]
         d = dict(video_path=fname, uid=sid, question="\n".join([r["question"]] + opts), question_type=list(qt) if isinstance(qt, list) else [qt], answer=r["answer"], time_reference=c.get("time_reference"), type=c["video_genre"], key=stem)
@@ -247,7 +262,9 @@ def _process_docs(dataset: datasets.Dataset, task: str) -> datasets.Dataset:
     expected = {str(x) for x in _IDS[task]}
     got = {str(d[_ID_FIELD[task]]) for d in docs}
     if got != expected:
-        raise RuntimeError(f"metav/{task}: the dataset has {len(got)} items for this source, the shipped data/metav_ids.json lists {len(expected)} ({len(expected - got)} missing, {len(got - expected)} unexpected); dataset version mismatch?")
+        raise RuntimeError(
+            f"metav/{task}: the dataset has {len(got)} items for this source, the shipped data/metav_ids.json lists {len(expected)} ({len(expected - got)} missing, {len(got - expected)} unexpected); dataset version mismatch?"
+        )
     return datasets.Dataset.from_list(docs)
 
 
