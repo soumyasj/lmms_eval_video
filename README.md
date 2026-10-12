@@ -11,7 +11,7 @@ Rogerio Feris<sup>3,5</sup>&emsp;
 James R. Glass<sup>4</sup>&emsp;
 Ameya Prabhu<sup>6</sup>&emsp;
 <a href="https://hildekuehne.github.io/">Hilde Kuehne</a><sup>1,5,6</sup><br>
-<sup>1</sup>University of Tübingen&emsp;<sup>2</sup>Meta&emsp;<sup>3</sup>IBM Research&emsp;<sup>4</sup>MIT&emsp;<sup>5</sup>MIT-IBM Watson AI Lab&emsp;<sup>6</sup>Tübingen AI Center<br><br>
+<sup>1</sup>University of Tübingen&emsp;<sup>2</sup>Max Planck Institute for Informatics, SIC&emsp;<sup>3</sup>IBM Research&emsp;<sup>4</sup>MIT&emsp;<sup>5</sup>MIT-IBM Watson AI Lab&emsp;<sup>6</sup>Tübingen AI Center<br><br>
 
 <a href='https://soumyasj.github.io/meta-video/'><img src='https://img.shields.io/badge/Project_Page-Page-64fefe' alt='Project Page'></a> &emsp;
 <a href='./Meta-Video.pdf'><img src='https://img.shields.io/badge/Paper-PDF-b31b1b' alt='Paper'></a> &emsp;
