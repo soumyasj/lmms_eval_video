@@ -2,17 +2,20 @@
 
 A fork of [lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval) for measuring how much the
 evaluation setup (frames, decoder, resolution, backend, batching) moves video-benchmark scores,
-and the home of **Meta-VideoBench (`metav`)**, a 1000-item video benchmark built to rank models
+and the home of **Meta-Video (`metav`)**, a 1000-item video benchmark built to rank models
 in minutes instead of hours.
 
 - [FIXES.md](./FIXES.md): what was changed in `lmms_eval/` and why.
 - [README_upstream.md](./README_upstream.md): the original lmms-eval README (install, all tasks).
 - [VIDEO_BENCHMARKS_REFERENCE.md](./VIDEO_BENCHMARKS_REFERENCE.md): the video benchmarks as they behave here.
 
-## Meta-VideoBench (`metav`)
+## Meta-Video (`metav`)
 
-Five video benchmarks recombined into one evaluation set of **1000 questions on 788 videos**
-(none longer than 60 min, at most 3 questions per video), in-tree as the task `metav`:
+Five video benchmarks recombined into one evaluation set of **1000 questions on 791 videos**
+(none longer than 60 min, at most 3 questions per video), in-tree as the task `metav`. The data is
+the Hugging Face dataset [`soumyasj/Meta-Video`](https://huggingface.co/datasets/soumyasj/Meta-Video)
+(config `meta_v`: the questions; `videos/`: the 791 videos, 70 GB), so nothing else has to be
+downloaded:
 
 | source | full set | in `metav` | subtask |
 |---|---|---|---|
@@ -22,22 +25,24 @@ Five video benchmarks recombined into one evaluation set of **1000 questions on 
 | VideoMMMU (perception / comprehension / adaptation) | 300 / 300 / 300 | 60 / 60 / 60 | `metav_video_mmmu_{perception,comprehension,adaptation}` |
 | VSI-Bench | 5130 | 122 | `metav_vsibench` |
 
-How it was built: questions that three models answer correctly from **black frames** were removed
-(the set needs the video), and every question category of every source is covered. Each subtask
-re-uses its source task's visual loader, parser and metric, so an item is scored exactly as in its
-benchmark. Scores are lower than on the sources by construction (the
-easy items are gone): compare models by rank and by `metav` score, not against published numbers.
-
-Files: `lmms_eval/tasks/metav/data/metav.jsonl` (the items: question, options, answer, video,
-duration, source ids, categories), `metav_ids.json` (selected ids per source), `metav_prompts.json`
-(the prompt text of every item, materialized once).
+How it was built: questions that at least two of three models answer correctly from **black frames**
+were removed (the set needs the video), and every question category of every source is covered.
+Each subtask maps the Meta-Video rows back onto its source task's document schema and re-uses the
+source's parser and metric, so an item is scored exactly as in its benchmark. Scores are lower than
+on the sources by construction (the easy items are gone): compare models by rank and by `metav`
+score, not against published numbers.
 
 ```bash
-# any wrapper, like any lmms_eval task
+# any wrapper, like any lmms_eval task; the first run downloads the dataset repo to $HF_HOME/meta_video
 python -m lmms_eval --model qwen2_5_vl --model_args pretrained=Qwen/Qwen2.5-VL-7B-Instruct,max_num_frames=32 \
        --tasks metav --batch_size 1 --log_samples --output_path logs/metav_try
 python eval_scripts/score_metav.py --write logs/metav_try/*/*_results.json     # metav score = macro over the 5 sources
 ```
+
+Videos are read from `$HF_HOME/meta_video/videos/...`; `METAV_VIDEO_ROOT=<dir>` points at another
+copy of the dataset repo instead. The full set of 1000 items with the selection metadata also ships
+in `lmms_eval/tasks/metav/data/` (`metav.jsonl`, `metav_ids.json`, `metav_prompts.json` = the prompt
+text of every item, materialized once).
 
 `metav` is also a `--task` / `TASKS` value for every sweep below. Prompt knobs:
 `METAV_PROMPT_VARIANT`, `METAV_POST_PROMPT`, `METAV_OPTION_STYLE` (see `lmms_eval/tasks/metav/utils.py`).

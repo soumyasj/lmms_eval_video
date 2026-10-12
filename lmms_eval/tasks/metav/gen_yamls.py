@@ -1,14 +1,16 @@
-"""Generate the Meta-VideoBench (metav) task YAMLs: one per source task, plus the group `metav`.
+"""Generate the Meta-Video (metav) task YAMLs: one per source benchmark, plus the group `metav`.
+
+Every subtask loads the same Hugging Face dataset (``DATASET``: the 1000 questions as config
+``meta_v`` plus the 791 videos under ``videos/``), keeps the rows of its source
+(``utils.process_docs_<source>``, which also maps them onto the source task's document schema) and
+scores them with the source task's own parser and metric. lmms_eval's ``video: True`` mechanism
+downloads the whole dataset repo once and links it at ``$HF_HOME/<cache_dir>``;
+``utils.metav_doc_to_visual`` reads the videos from there.
 
 The precomputed-frame variants (metav_frames<N>, exp7) are NOT written here:
     python eval_scripts/make_frames_task.py --task metav
 
 Run once (from the repo root): python lmms_eval/tasks/metav/gen_yamls.py
-Each YAML mirrors the in-tree source task (dataset, generation kwargs, scoring),
-adds a process_docs filter to the selected question ids, and takes the prompt
-text from data/metav_prompts.json (utils.doc_to_text_<source>): the
-lmms_eval_specific_kwargs only carry the prompt variant name, one entry per
-variant listed in prompt_variants.VARIANTS keyed by the lmms_eval model name.
 """
 
 import os
@@ -17,15 +19,24 @@ from prompt_variants import VARIANTS
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
-SOURCES = {
-    "videomme": """dataset_path: lmms-lab/Video-MME
+DATASET = "soumyasj/Meta-Video"
+CACHE_DIR = "meta_video"  # below $HF_HOME; must match utils.CACHE_DIR
+
+HEADER = f"""dataset_path: {DATASET}
+dataset_name: meta_v
 dataset_kwargs:
-  cache_dir: videomme
+  token: True
   video: True
+  cache_dir: {CACHE_DIR}
+  create_link: True
 test_split: test
 output_type: generate_until
-cluster_key: videoID
-doc_to_visual: !function utils.videomme_doc_to_visual
+doc_to_visual: !function utils.metav_doc_to_visual
+"""
+
+# per source: how the items are prompted, generated and scored (identical to the source task)
+SOURCES = {
+    "videomme": """cluster_key: videoID
 doc_to_text: !function utils.doc_to_text_videomme
 doc_to_target: "answer"
 generation_kwargs:
@@ -40,16 +51,7 @@ metric_list:
     aggregation: !function utils.videomme_aggregate_results
     higher_is_better: true
 """,
-    "longvideobench_val_v": """dataset_path: longvideobench/LongVideoBench
-dataset_kwargs:
-  token: True
-  cache_dir: datasets/longvideobench
-  video: True
-  force_download: False
-  local_files_only: False
-test_split: validation
-doc_to_visual: !function utils.longvideobench_doc_to_visual_v
-doc_to_text: !function utils.doc_to_text_longvideobench_val_v
+    "longvideobench_val_v": """doc_to_text: !function utils.doc_to_text_longvideobench_val_v
 doc_to_target: "correct_choice"
 generation_kwargs:
   max_new_tokens: 32
@@ -61,15 +63,7 @@ metric_list:
     aggregation: !function utils.longvideobench_aggregate_results
     higher_is_better: true
 """,
-    "lvbench": """dataset_path: lmms-lab/LVBench
-dataset_kwargs:
-  token: True
-  cache_dir: lvbench
-  video: True
-test_split: train
-output_type: generate_until
-doc_to_visual: !function utils.lvbench_doc_to_visual
-doc_to_text: !function utils.doc_to_text_lvbench
+    "lvbench": """doc_to_text: !function utils.doc_to_text_lvbench
 doc_to_target: "answer"
 generation_kwargs:
   max_new_tokens: 16
@@ -79,15 +73,7 @@ metric_list:
     aggregation: mean
     higher_is_better: true
 """,
-    "vsibench": """dataset_path: nyu-visionx/VSI-Bench
-dataset_name: full
-dataset_kwargs:
-  cache_dir: vsibench
-  video: True
-test_split: test
-output_type: generate_until
-doc_to_visual: !function utils.vsibench_doc_to_visual
-doc_to_text: !function utils.doc_to_text_vsibench
+    "vsibench": """doc_to_text: !function utils.doc_to_text_vsibench
 doc_to_target: "ground_truth"
 generation_kwargs:
   max_new_tokens: 16
@@ -102,16 +88,7 @@ metric_list:
     higher_is_better: true
 """,
 }
-VMMMU = """dataset_path: lmms-lab/VideoMMMU
-dataset_name: "{name}"
-dataset_kwargs:
-  token: True
-  video: True
-  cache_dir: video_mmmu
-test_split: test
-output_type: generate_until
-doc_to_visual: !function utils.videommmu_doc_to_visual
-doc_to_text: !function utils.doc_to_text_video_mmmu_{track}
+VMMMU = """doc_to_text: !function utils.doc_to_text_video_mmmu_{track}
 doc_to_target: !function utils.videommmu_doc_to_answer
 process_results: !function utils.videommmu_process_results
 metric_list:
@@ -122,19 +99,20 @@ generation_kwargs:
   max_new_tokens: 1024
 """
 for track in ("perception", "comprehension", "adaptation"):
-    SOURCES[f"video_mmmu_{track}"] = VMMMU.format(name=track.capitalize(), track=track)
+    SOURCES[f"video_mmmu_{track}"] = VMMMU.format(track=track)
 
 names = []
 for task, body in SOURCES.items():
     name = f"metav_{task}"
     names.append(name)
     with open(os.path.join(HERE, f"{name}.yaml"), "w") as f:
-        f.write(f"# Meta-VideoBench (metav) slice of {task}; generated by gen_yamls.py\n")
+        f.write(f"# Meta-Video (metav), the {task} items; generated by gen_yamls.py\n")
         f.write(f"task: {name}\n")
+        f.write(HEADER)
         f.write(f"process_docs: !function utils.process_docs_{task}\n")
         f.write(body)
         f.write("lmms_eval_specific_kwargs:\n" + "".join(f"  {v}:\n    prompt_variant: {v}\n" for v in VARIANTS))
-        f.write("metadata:\n  - version: 0.0\n")
+        f.write("metadata:\n  - version: 0.1\n")
 with open(os.path.join(HERE, "metav.yaml"), "w") as f:
     f.write("group: metav\ntask:\n" + "".join(f"- {n}\n" for n in names))
 print("wrote", len(SOURCES) + 1, "yamls to", HERE)

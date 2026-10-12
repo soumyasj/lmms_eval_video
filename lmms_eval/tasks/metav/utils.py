@@ -194,6 +194,7 @@ _ID_FIELD = {
 
 
 def _filter(dataset: datasets.Dataset, task: str) -> datasets.Dataset:
+    """A dataset already in the source task's schema (a frames parquet): keep the selected ids."""
     field = _ID_FIELD[task]
     keep = set(str(x) for x in _IDS[task])
     out = dataset.filter(lambda d: str(d[field]) in keep)
@@ -202,9 +203,67 @@ def _filter(dataset: datasets.Dataset, task: str) -> datasets.Dataset:
     return out
 
 
+# ---- the Meta-Video dataset (soumyasj/Meta-Video, config meta_v) -----------------------
+# One row per item: id, source, source_task, source_id, video (path below the dataset repo),
+# duration_s, duration_bucket, question, options, answer, answer_type, categories (JSON). Each
+# subtask keeps its source's rows and maps them onto the source task's document schema, so the
+# source's doc_to_visual / parser / metric and the materialized prompts work unchanged.
+CACHE_DIR = "meta_video"  # below $HF_HOME; lmms_eval links the downloaded dataset repo there (gen_yamls.CACHE_DIR)
+
+
+def _opt_text(o):
+    return re.sub(r"^\s*(?:\([A-Z]\)|[A-Z][.):])\s*", "", o)
+
+
+def _to_source_doc(task: str, r: dict) -> dict:
+    c = json.loads(r["categories"]) if isinstance(r["categories"], str) else dict(r["categories"] or {})
+    sid = str(r["source_id"])
+    fname = os.path.basename(r["video"])  # <videoID>.mp4
+    stem = fname[: -len(".mp4")] if fname.endswith(".mp4") else fname
+    opts = list(r["options"] or [])
+    base = {"metav_id": r["id"], "metav_video": r["video"]}
+    if task == "videomme":
+        d = dict(video_id=sid.split("-")[0], duration=c["duration"], domain=c["domain"], sub_category=c["sub_category"], url=None, videoID=stem, question_id=sid, task_type=c["task_type"], question=r["question"], options=opts, answer=r["answer"])
+    elif task == "longvideobench_val_v":
+        texts = opts + ["N/A"] * (5 - len(opts))
+        d = dict(video_id=sid.rsplit("_", 1)[0], id=sid, video_path=fname, subtitle_path=f"{stem}_en.json", correct_choice=ord(r["answer"]) - ord("A"), question=r["question"], **{f"option{i}": texts[i] for i in range(5)}, duration=float(r["duration_s"]), duration_group=int(c["duration_group"]), question_category=c["question_category"], topic_category=c["topic_category"], starting_timestamp_for_subtitles=0.0)
+    elif task == "lvbench":  # the source keeps the "(A) ..." option lines inside the question text
+        qt = c["question_type"]
+        d = dict(video_path=fname, uid=sid, question="\n".join([r["question"]] + opts), question_type=list(qt) if isinstance(qt, list) else [qt], answer=r["answer"], time_reference=c.get("time_reference"), type=c["video_genre"], key=stem)
+    elif task.startswith("video_mmmu_"):
+        d = dict(id=sid, question=r["question"], options=opts, answer=r["answer"], link_selected=None, question_type=c["question_type"], qa_type=c["qa_type"])
+    elif task == "vsibench":
+        d = dict(id=int(sid), dataset=r["video"].split("/")[-2], scene_name=stem, question_type=c["question_type"], question=r["question"], ground_truth=r["answer"], options=opts or None)
+    else:
+        raise KeyError(task)
+    d.update(base)
+    return d
+
+
+def _process_docs(dataset: datasets.Dataset, task: str) -> datasets.Dataset:
+    if "source_task" not in dataset.column_names:  # not the Meta-Video dataset: a frames parquet in the source schema
+        return _filter(dataset, task)
+    docs = [_to_source_doc(task, r) for r in dataset if r["source_task"] == task]
+    expected = {str(x) for x in _IDS[task]}
+    got = {str(d[_ID_FIELD[task]]) for d in docs}
+    if got != expected:
+        raise RuntimeError(f"metav/{task}: the dataset has {len(got)} items for this source, the shipped data/metav_ids.json lists {len(expected)} ({len(expected - got)} missing, {len(got - expected)} unexpected); dataset version mismatch?")
+    return datasets.Dataset.from_list(docs)
+
+
 # one process_docs per source task; referenced from the YAMLs
 for _task in _ID_FIELD:
-    globals()[f"process_docs_{_task}"] = partial(_filter, task=_task)
+    globals()[f"process_docs_{_task}"] = partial(_process_docs, task=_task)
+
+
+def metav_doc_to_visual(doc):
+    """[path of the item's video] inside the downloaded Meta-Video repo: $HF_HOME/meta_video (lmms_eval links the
+    snapshot there on the first run) or METAV_VIDEO_ROOT, a directory that holds the repo's videos/ folder."""
+    root = os.environ.get("METAV_VIDEO_ROOT") or os.path.join(os.path.expanduser(os.getenv("HF_HOME", "~/.cache/huggingface/")), CACHE_DIR)
+    path = os.path.join(root, doc["metav_video"])
+    if not os.path.exists(path):
+        raise FileNotFoundError(f"metav: video {doc['metav_video']} not found under {root}; set METAV_VIDEO_ROOT to a local copy of the dataset repo or let lmms_eval download it (dataset_kwargs video: True)")
+    return [path]
 
 
 # ---- prompts: materialized text per item and variant -----------------------------

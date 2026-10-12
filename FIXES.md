@@ -83,10 +83,12 @@ error. Does not cover TempCompass captioning, which is judge-only.
 
 ### 1.5 Tasks
 
-**Meta-VideoBench** — `lmms_eval/tasks/metav/` (new; see the README for usage)
+**Meta-Video** — `lmms_eval/tasks/metav/` (new; see the README for usage)
 `metav` (1000 items, group of `metav_<source>`): a compute-aware subset of Video-MME, LongVideoBench,
-LVBench, VideoMMMU and VSI-Bench, one subtask per source, all re-using the in-tree source tasks'
-visual loaders, parsers and metrics. Item ids and materialized
+LVBench, VideoMMMU and VSI-Bench, one subtask per source. Every subtask loads the HF dataset
+`soumyasj/Meta-Video` (questions + videos); `process_docs_<source>` keeps the source's rows and maps
+them onto the source task's document schema, so the in-tree parsers and metrics are re-used unchanged
+and `metav_doc_to_visual` serves the videos from the downloaded repo. Item ids and materialized
 prompts ship in `lmms_eval/tasks/metav/data/`. Task-level fixes that live only there
 (`metav/utils.py`):
 
