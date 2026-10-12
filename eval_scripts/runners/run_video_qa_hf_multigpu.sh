@@ -343,6 +343,10 @@ else
   MODEL_NAME=qwen2_5_vl
 fi
 
+# DRY_RUN=1 prints the final command instead of running it (eval_scripts/run_eval.py --dry_run)
+if [[ "${DRY_RUN:-0}" == "1" ]]; then
+  printf 'DRY_RUN:'; printf ' %q' "${LAUNCHER[@]}" --model "$MODEL_NAME" --model_args "$MODEL_ARGS" --tasks "$TASKS" ${INCLUDE_PATH:+--include_path "$INCLUDE_PATH"} --batch_size "$BATCH_SIZE" --log_samples --log_samples_suffix "$RUN_TAG" --output_path "$OUTPUT_PATH" ${LIMIT:+--limit "$LIMIT"} ${SEED:+--seed "$SEED"} ${GEN_KWARGS:+--gen_kwargs "$GEN_KWARGS"}; printf '\n'; exit 0
+fi
 "${LAUNCHER[@]}" \
   --model "$MODEL_NAME" \
   --model_args "$MODEL_ARGS" \

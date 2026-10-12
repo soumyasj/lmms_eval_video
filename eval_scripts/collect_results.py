@@ -4,7 +4,7 @@
     python eval_scripts/collect_results.py                      # logs/sweep_params logs/sweep_frames logs/sweep_vllm_fix
     python eval_scripts/collect_results.py logs/sweep_params --csv runs.csv --md runs.md
 
-Walks the given roots for the config.json that eval_scripts/lib.sh writes next to every run,
+Walks the given roots for the config.json that eval_scripts/run_eval.py (and the sweep scripts) write next to every run,
 pairs it with the *_results.json lmms_eval wrote below it and extracts one score per run:
   * a plain task: its first non-stderr metric (e.g. videomme_perception_score);
   * a group: the group row if lmms_eval aggregated one (mvbench), else the mean over its subtasks;
@@ -24,7 +24,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from score_metav import score as metav_score  # noqa: E402
 
-DEFAULT_ROOTS = ["logs/sweep_params", "logs/sweep_frames", "logs/sweep_vllm_fix"]
+DEFAULT_ROOTS = ["logs/runs", "logs/sweep_params", "logs/sweep_frames", "logs/sweep_vllm_fix"]
 KNOBS = ["backend", "nframes", "fps", "max_frames", "max_pixels", "max_patches", "batch_size", "video_reader", "frame_sampler", "temperature", "batch_invariant", "seed"]
 
 

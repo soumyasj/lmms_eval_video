@@ -1,0 +1,12 @@
+# The paper's standardized comparison on Meta-V: five models at 4..128 frames, one fixed protocol
+# (HF backend, .mp4 input, uniform sampling, torchcodec decoder, family pixel budget, batch 1,
+# temperature from the task yaml = 0, seed 22). 30 runs.
+tasks: metav
+model: [internvl35_4b, qwen3vl_4b, qwen25vl_7b, internvl35_8b, qwen3vl_8b]
+nframes: [4, 8, 16, 32, 64, 128]
+backend: hf
+input: video
+frame_sampling: uniform
+video_reader: torchcodec
+batch_size: 1
+seed: 22

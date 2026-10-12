@@ -1,0 +1,10 @@
+# HF vs stock vLLM (frames as images) vs the vLLM video fix, Qwen2.5-VL-7B on Meta-V at 32 frames.
+# The vllm_fix toggle is ignored on the hf backend, so this is 3 runs: hf, vllm, vllm+fix.
+tasks: metav
+model: Qwen/Qwen2.5-VL-7B-Instruct
+nframes: 32
+backend: [hf, vllm]
+vllm_fix: [false, true]
+batch_size: 1
+batch_invariant: true    # vllm runs reproducible across batch sizes (needs vllm >= 0.11.1)
+seed: 22

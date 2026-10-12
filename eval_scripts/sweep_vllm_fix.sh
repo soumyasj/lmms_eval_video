@@ -6,7 +6,7 @@
 # separate images -> Qwen2.5-VL sees N x <|image_pad|> (no 2-frame temporal merge, no video
 # position ids, no timestamps). `vllm_fix` hands vLLM a file:// URL, vLLM decodes it with the
 # model's own video processor -> one <|video_pad|> block, the input the hf backend builds.
-# See FIXES.md ("vLLM backend never sends a video").
+# See MODELS.md (Qwen2.5-VL: vllm_fix).
 #
 # Usage (from the repo root):
 #   bash eval_scripts/sweep_vllm_fix.sh --model Qwen/Qwen2.5-VL-7B-Instruct [--task metav] [--dry_run]

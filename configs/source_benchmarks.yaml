@@ -1,0 +1,8 @@
+# One model on the seven source benchmarks of the paper at 32 frames, same protocol as metav_protocol.yaml.
+tasks: [videomme, longvideobench_val_v, tempcompass_multi_choice, mmvu_val, lvbench, mlvu_dev, vsibench]
+model: qwen3vl_8b
+nframes: 32
+backend: hf
+video_reader: torchcodec
+batch_size: 4
+seed: 22

@@ -26,136 +26,233 @@ Ameya Prabhu<sup>6</sup>&emsp;
 
 ---
 
-A fork of [lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval) for measuring how much the
-evaluation setup (frames, decoder, resolution, backend, batching) moves video-benchmark scores,
-and the home of **Meta-Video (`metav`)**, a 1000-item video benchmark built to rank models
-in minutes instead of hours. The companion dataset
-[soumyasj/video-benchmarks-nonblind](https://huggingface.co/datasets/soumyasj/video-benchmarks-nonblind)
-holds the source benchmarks with every question that models answer correctly from black frames removed.
+`lmms_eval_video` is a fork of [lmms-eval](https://github.com/EvolvingLMMs-Lab/lmms-eval) for **video benchmarks**.
+The same model checkpoint scores differently depending on how many frames it gets, which library decoded them,
+how large they are, whether the backend sends a video or a list of images, and how the answer is decoded. Papers
+rarely report these choices. This repository makes them explicit:
 
-- [FIXES.md](./FIXES.md): what was changed in `lmms_eval/` and why.
-- [README_upstream.md](./README_upstream.md): the original lmms-eval README (install, all tasks).
-- [VIDEO_BENCHMARKS_REFERENCE.md](./VIDEO_BENCHMARKS_REFERENCE.md): the video benchmarks as they behave here.
+- **One YAML file per evaluation.** Every setting that changes what the model sees or how it answers lives in a single
+  config; the runner refuses settings a model wrapper would silently ignore, and writes an **evaluation card** next to
+  every result with the resolved configuration and the exact command.
+- **Meta-Video (`metav`)**, a 1,000-question benchmark drawn from five video suites, filtered for questions that need the
+  video and selected to preserve model rankings at about 5x less compute than the full suites.
+- **Reference documentation** for what actually runs: [DATASETS.md](./DATASETS.md) (every video task: dataset version,
+  splits, prompt, metric, judge) and [MODELS.md](./MODELS.md) (every model family: arguments, how frames become tokens,
+  backends, known issues).
 
-## Meta-Video (`metav`)
+## Installation
 
-Five video benchmarks recombined into one evaluation set of **1000 questions on 791 videos**
-(none longer than 60 min, at most 3 questions per video), in-tree as the task `metav`. The data is
-the Hugging Face dataset [`soumyasj/Meta-Video`](https://huggingface.co/datasets/soumyasj/Meta-Video)
-(config `meta_v`: the questions; `videos/`: the 791 videos, 70 GB), so nothing else has to be
-downloaded:
+```bash
+git clone https://github.com/soumyasj/lmms_eval_video
+cd lmms_eval_video
+pip install -e .              # or: uv pip install -e .
+pip install -r eval_scripts/env/requirements-lock.txt   # the exact versions the paper's numbers were produced with
+```
+
+Two environments cover all model families (see [MODELS.md](./MODELS.md#environments)): transformers 4.57 / vLLM 0.11
+for Qwen2.5-VL, Qwen3-VL and Gemma 3; transformers 5.16 / vLLM 0.28 for Qwen3.5, InternVL3.5 and GLM-V. Batch-invariant
+vLLM runs need vLLM >= 0.11.1. Set `HF_HOME` to the cache that holds (or should receive) the benchmark videos, and `HF_TOKEN`
+for gated datasets.
+
+## Quickstart
+
+```bash
+# Meta-Video, Qwen2.5-VL-7B, 32 frames, HF backend: the first run downloads the dataset (questions + 70 GB of videos)
+python eval_scripts/run_eval.py configs/example.yaml
+
+# see what would run (resolved settings, evaluation card, the final `python -m lmms_eval` command), run nothing
+python eval_scripts/run_eval.py configs/example.yaml --dry_run
+
+# override single keys without editing the file
+python eval_scripts/run_eval.py configs/example.yaml --set model=qwen3vl_8b --set nframes=64 --set limit=20
+```
+
+Results land in `logs/runs/<config name>/<task>/<model>/<run tag>/` with lmms_eval's `*_results.json` and per-sample
+logs, plus `config.json` and `evaluation_card.md`. `python eval_scripts/collect_results.py` tabulates every finished run.
+
+---
+
+## 1. Standardized evaluation
+
+### 1.1 The configuration file
+
+[`configs/example.yaml`](./configs/example.yaml) lists every key with its default. Four keys are **toggles** and may be
+lists; the script runs the full grid. Everything else is fixed for the grid.
+
+| group | key | values | what it changes |
+|---|---|---|---|
+| toggle | `tasks` | any video task or group ([DATASETS.md](./DATASETS.md)) | the dataset |
+| toggle | `model` | HF id or alias ([MODELS.md](./MODELS.md)) | the checkpoint and, through it, the runner family |
+| toggle | `nframes` | int | frames per video (uniform sampling), or the cap in fps mode |
+| toggle | `backend` | `hf` \| `vllm` \| `hf_tiled` | transformers `generate`, the vLLM engine, or InternVL's image tiler per frame |
+| toggle | `vllm_fix` | bool | on `vllm`: forward the `.mp4` to vLLM (one video, temporal merge, timestamps) instead of N separate images; Qwen2.5-VL only |
+| input | `input` | `video` \| `frames` | the `.mp4` (the wrapper samples frames) or pre-extracted JPEGs (`<task>_frames<N>`, see 1.5) |
+| input | `frame_sampling`, `fps`, `max_frames` | `uniform` \| `fps` | exactly `nframes` frames, or `fps` frames per second capped at `max_frames` |
+| input | `frame_sampler` | `uniform` \| `random` | which positions out of the decoded frames (Qwen2.5-VL hf only, seeded) |
+| input | `video_reader` | `decord` \| `torchvision` \| `torchcodec` | the decoding library; they do not return identical frames |
+| input | `max_pixels`, `min_pixels` | int | per-frame pixel budget (tokens per frame = pixels / patch area); default per family |
+| input | `max_patches`, `min_patches` | int | InternVL: 448x448 tiles per frame |
+| runtime | `batch_size`, `batch_invariant` | int, bool | batch size; `VLLM_BATCH_INVARIANT=1` so vLLM answers do not depend on the batch |
+| runtime | `num_gpus`, `tensor_parallel_size`, `gpu_memory_utilization`, `max_model_len`, `max_num_seqs` | | data parallel replicas; vLLM engine settings |
+| runtime | `env`, `attn` | path, str | environment `bin` dir to run in; attention implementation (hf) |
+| decoding | `temperature`, `max_new_tokens` | | `null` = the task yaml's `generation_kwargs` (temperature 0, 16 tokens for most MCQ tasks) |
+| decoding | `enable_thinking` | bool | Qwen3.5 / thinking checkpoints: emit the answer directly (default) or a reasoning trace first |
+| decoding | `seed` | int | lmms_eval seed, also the frame-sampler seed |
+| decoding | `prompt` | `{variant, post_prompt, option_style, layout}` | Meta-Video only: prompt variant per model family, a replacement answer instruction, option label style, text/visual order |
+| bookkeeping | `name`, `output_root`, `resume`, `limit`, `include_path`, `extra_model_args` | | run-set name, where results go, skip finished runs, smoke tests |
+
+What the script does with it, for every point of the grid:
+
+1. resolves the alias to an HF id and the id to a **runner family** (`qwen25vl`, `qwen3vl`, `qwen35`, `internvl`, `glm`, `gemma`);
+2. checks that the family's wrapper can honour every setting and **refuses** otherwise. Examples: fps sampling on vLLM
+   (vLLM samples a frame count), a random frame sampler on Qwen3-VL (its wrapper has none), `max_patches` on InternVL's
+   stock video path (ignored there), a raw `.mp4` for Gemma 3 (its wrapper applies no frame budget). A run never silently
+   uses an uncontrolled setting;
+3. calls the family's runner in `eval_scripts/runners/`, which builds the `--model_args` string and the
+   `python -m lmms_eval` command ([MODELS.md](./MODELS.md) lists them per family and backend);
+4. writes `evaluation_card.md`: model, task, backend, batch, frames and how they were sampled, decoder, resolution,
+   tokens per frame, decoding settings, prompt, seed, environment, command. Put it next to any number you report.
+
+### 1.2 The reference protocol
+
+The defaults in `configs/example.yaml` are the protocol every number in the paper uses:
+
+| setting | value | why |
+|---|---|---|
+| backend | HF transformers | the reference path; stock vLLM sends N images instead of a video (1.3) |
+| input | `.mp4`, uniform sampling, exactly `nframes` frames | 1 fps sampling costs 3 to 5 points on short-clip benchmarks |
+| decoder | torchcodec | decoders disagree on which frames they return; torchvision drops MVBench by 10 points |
+| resolution | family default (`max_pixels` 602112 for Qwen2.5-VL, 524288 Qwen3-VL, 131072 Qwen3.5; 1 tile for InternVL) | under 1 point of effect, but it sets the token count |
+| batch size | 1 (or any, on hf) | score-neutral within a backend on hf; vLLM needs `batch_invariant` |
+| decoding | temperature 0, the task's token cap, thinking off | temperature 1 costs 5 points on Video-MME |
+| seed | 22 | |
+
+[`configs/metav_protocol.yaml`](./configs/metav_protocol.yaml) reproduces the paper's standardized comparison (five
+models, 4 to 128 frames, Meta-Video); [`configs/source_benchmarks.yaml`](./configs/source_benchmarks.yaml) runs one model
+on the seven source benchmarks; [`configs/backend_comparison.yaml`](./configs/backend_comparison.yaml) compares HF, stock
+vLLM and the vLLM video fix.
+
+### 1.3 Backends: what the model actually receives
+
+- **`hf`**: lmms_eval's transformers wrapper of the family. The `.mp4` goes through the model's own video processor:
+  Qwen2.5-VL / Qwen3-VL merge frame pairs and (Qwen3-VL) write `<t seconds>` timestamps into the prompt; InternVL
+  resizes every frame to one 448x448 tile; see [MODELS.md](./MODELS.md).
+- **`vllm`**: lmms_eval's generic vLLM wrapper decodes the video **client-side** and sends the frames as N separate
+  images. Qwen2.5-VL then sees N x `<|image_pad|>`: no temporal merge, no video position ids, no timestamps. HF and
+  stock vLLM differ by 4 to 6 points on TempCompass, MVBench and Meta-Video because of this.
+- **`vllm` + `vllm_fix: true`**: the out-of-tree plugin `eval_scripts/runners/vllm_fix/` hands vLLM a `file://` URL,
+  so vLLM decodes the video server-side through the model's own processor and builds the same single `<|video_pad|>`
+  block as the hf path. Qwen2.5-VL only. `batch_invariant: true` makes vLLM answers independent of the batch (vLLM >= 0.11.1).
+- **`hf_tiled`** (InternVL): the model card's `load_video(max_num=M)` recipe, every frame through the image tiler, so
+  `max_patches` tiles per frame actually apply.
+
+### 1.4 Reproducing the paper's sweeps
+
+The one-knob-at-a-time sweeps behind the paper's tables are scripts over the same runners and resume automatically:
+
+```bash
+bash eval_scripts/sweep_params.sh --model qwen25vl_7b --task videomme     # exp1..exp8: backend, batch size, decoder, frame positions, fps vs uniform, frames, pixels, .mp4 vs frames, temperature
+bash eval_scripts/sweep_frames.sh --model qwen3vl_8b                      # accuracy vs 4..128 frames, .mp4 and pre-extracted frames, every task in TASKS
+bash eval_scripts/sweep_vllm_fix.sh --model Qwen/Qwen2.5-VL-7B-Instruct --task metav   # hf vs stock vLLM vs vllm_fix over batch sizes and seeds
+python eval_scripts/collect_results.py --csv runs.csv                     # one table per sweep / task / model / experiment
+```
+
+Each script's header documents its grid and environment knobs.
+
+### 1.5 Pre-extracted frames
+
+```bash
+python eval_scripts/make_frames_task.py --task videomme     # hours for long benchmarks; --workers N
+python eval_scripts/make_frames_task.py --task metav
+```
+
+Extracts 128 uniform frames per video into `data/frames/videos/`, writes `data/frames/<task>_frames<N>.parquet` for
+N = 4 ... 128 and registers the tasks `<task>_frames<N>` (same prompt and metric as the source task, JPEG frames instead
+of the video). `input: frames` in a config selects them. This is the only video input GLM-V and Gemma 3 accept on hf.
+
+### 1.6 What this fork changes in lmms_eval
+
+Every change is listed with its cause in [MODELS.md](./MODELS.md#what-this-fork-changes) and
+[DATASETS.md](./DATASETS.md#task-level-changes). The short version:
+
+- the torchvision decoder decoded whole clips into memory (100 to 250 GB on Video-MME) and is now seek-based;
+- `nframes` larger than a clip crashed the Qwen wrappers and is now clamped;
+- fps sampling ignored the frame cap, so hour-long videos expanded without bound;
+- InternVL's video processor crashed on every sample and the run scored ~0 % instead of failing;
+- result files are named after the run configuration; dataset caches are not re-resolved on every run;
+- a seeded random frame sampler, the pre-extracted-frames task generator, the `vllm_fix` plugin and the `metav` task.
+
+---
+
+## 2. Meta-Video (`metav`)
+
+Five video benchmarks recombined into one evaluation set of **1,000 questions on 791 videos** (none longer than 60
+minutes, at most 3 questions per video). The data is the Hugging Face dataset
+[`soumyasj/Meta-Video`](https://huggingface.co/datasets/soumyasj/Meta-Video): config `meta_v` holds the questions, `videos/`
+the 791 videos (70 GB). The first run downloads it to `$HF_HOME/meta_video`; nothing else is needed.
 
 | source | full set | in `metav` | subtask |
 |---|---|---|---|
-| Video-MME | 2700 | 312 | `metav_videomme` |
-| LongVideoBench (val, video) | 1337 | 240 | `metav_longvideobench_val_v` |
-| LVBench | 1549 | 146 | `metav_lvbench` |
+| Video-MME | 2,700 | 312 | `metav_videomme` |
+| LongVideoBench (val, video) | 1,337 | 240 | `metav_longvideobench_val_v` |
+| LVBench | 1,549 | 146 | `metav_lvbench` |
 | VideoMMMU (perception / comprehension / adaptation) | 300 / 300 / 300 | 60 / 60 / 60 | `metav_video_mmmu_{perception,comprehension,adaptation}` |
-| VSI-Bench | 5130 | 122 | `metav_vsibench` |
+| VSI-Bench | 5,130 | 122 | `metav_vsibench` |
 
-How it was built: questions that at least two of three models answer correctly from **black frames**
-were removed (the set needs the video), and every question category of every source is covered.
-Each subtask maps the Meta-Video rows back onto its source task's document schema and re-uses the
-source's parser and metric, so an item is scored exactly as in its benchmark. Scores are lower than
-on the sources by construction (the easy items are gone): compare models by rank and by `metav`
-score, not against published numbers.
+**How it was built.** Three models (Qwen2.5-VL-7B, Qwen3-VL-8B, InternVL3.5-8B) were run with black frames instead of
+the video; every question that at least two of them still answered correctly was removed. From the remaining pool,
+items were selected per source category so that the subset orders models the way the full benchmarks do (a newer family
+beats the older one, a larger model beats a smaller one), with a cap of three questions per video. 937 questions are
+multiple choice (564 with four options, 185 with five, 157 with ten) and 63 ask for a number; the correct letters are
+balanced, so guessing scores 20.3. Videos: 335 short (< 5 min), 281 medium (5 to 20 min), 175 long (20 to 60 min).
+
+**Scoring.** Each subtask maps the Meta-Video rows back onto its source task's document schema and re-uses the source's
+parser and metric, so an item is scored exactly as in its benchmark (VSI-Bench numerical items use mean relative
+accuracy). The Meta-Video score is the macro average over the five sources, VideoMMMU counting once as the mean of its
+three tracks. Scores are lower than on the source benchmarks by construction, since the questions language priors solve
+are gone: compare models by rank and by Meta-Video score, not against published numbers.
+
+**Running it.**
 
 ```bash
-# any wrapper, like any lmms_eval task; the first run downloads the dataset repo to $HF_HOME/meta_video
+python eval_scripts/run_eval.py configs/example.yaml                     # tasks: metav is the default
+python eval_scripts/run_eval.py configs/metav_protocol.yaml              # the paper's five models x six frame budgets
+python eval_scripts/score_metav.py --write logs/runs/*/metav/*/*/*/*_results.json   # macro score, written into the results file
+
+# or plain lmms_eval, any wrapper
 python -m lmms_eval --model qwen2_5_vl --model_args pretrained=Qwen/Qwen2.5-VL-7B-Instruct,max_num_frames=32 \
        --tasks metav --batch_size 1 --log_samples --output_path logs/metav_try
-python eval_scripts/score_metav.py --write logs/metav_try/*/*_results.json     # metav score = macro over the 5 sources
 ```
 
-Videos are read from `$HF_HOME/meta_video/videos/...`; `METAV_VIDEO_ROOT=<dir>` points at another
-copy of the dataset repo instead. The full set of 1000 items with the selection metadata also ships
-in `lmms_eval/tasks/metav/data/` (`metav.jsonl`, `metav_ids.json`, `metav_prompts.json` = the prompt
-text of every item, materialized once).
+**Prompts.** The prompt text of every item is materialized once (`lmms_eval/tasks/metav/data/metav_prompts.json`), so
+hf and vLLM runs of the same checkpoint see the same prompt (in lmms_eval, prompt blocks are otherwise keyed by the
+registered model name). The `prompt:` keys of the config select a variant (`default`, `qwen3_vl`), replace the answer
+instruction (`post_prompt`), restyle the option labels (`option_style`) or change the order of video and text
+(`layout: vt | tvt | vtv`, frames input only).
 
-`metav` is also a `--task` / `TASKS` value for every sweep below. Prompt knobs:
-`METAV_PROMPT_VARIANT`, `METAV_POST_PROMPT`, `METAV_OPTION_STYLE` (see `lmms_eval/tasks/metav/utils.py`).
+**Files.** `lmms_eval/tasks/metav/`: one YAML per source, `utils.py` (schema mapping, response cleaning, the numeric
+fallback for VSI-Bench), `data/` (items with selection metadata, ids per source, materialized prompts).
+`METAV_VIDEO_ROOT=<dir>` points the task at another copy of the dataset repo.
 
-## Setup
+**Non-blind splits.** The same black-frame filter applied to the full source benchmarks, plus MVBench, TempCompass,
+MMVU and SciVideoBench, is released as
+[`soumyasj/video-benchmarks-nonblind`](https://huggingface.co/datasets/soumyasj/video-benchmarks-nonblind): one config per
+lmms_eval task, original columns, so a task can be pointed at it with `dataset_path` / `dataset_name` / `test_split: nonblind`.
 
-- Run every command from the repository root.
-- Environments: the runners execute in the current environment unless you point `ENV_A`
-  (transformers 4.57 / vllm 0.11.0: Qwen2.5-VL, Qwen3-VL, Gemma 3), `ENV_A_BI` (same with vllm 0.11.1,
-  used for batch-invariant vLLM runs) and `ENV_B` (transformers 5.16 / vllm 0.28: Qwen3.5, InternVL,
-  GLM-V) at the `bin` dirs of three envs, or `LMMS_EVAL_ENV_BIN=<env>/bin` at one env for everything.
-- `HF_HOME` defaults to `~/.cache/huggingface`; point it at the cache that holds the benchmark videos.
-  Gated datasets need `HF_TOKEN` in the environment.
-- `--model` takes an HF id or an alias (`qwen25vl_7b`, `qwen3vl_8b`, `qwen35_9b`, `internvl35_8b`,
-  `glm46v_flash`, `gemma3_12b`). The runner family is inferred from the id; fine-tunes need
-  `--family` (e.g. `Video-R1/Video-R1-7B --family qwen25vl`).
-- Every sweep takes `--dry_run` (print the commands) and resumes: a run whose results file exists is skipped
-  (`RESUME=0` redoes it). Results land in `logs/<sweep>/<task>/<model>/<exp>/<run>/` with a
-  `config.json` and lmms_eval's `*_results.json` / samples.
+---
 
-## Experiment 1: parameter sweep
+## License
 
-```bash
-bash eval_scripts/sweep_params.sh --model qwen25vl_7b --task videomme            # all experiments
-bash eval_scripts/sweep_params.sh --model qwen3vl_8b --task metav --exp 1,5,7
+The code follows the lmms-eval license. The Meta-Video item lists and prompts are released under
+[CC BY 4.0](http://creativecommons.org/licenses/by/4.0). The videos belong to the source benchmarks and keep their licenses.
+
+## Citation
+
+```bibtex
+@misc{jahagirdar2026metavideo,
+  title={Meta-Video: Efficient Standardized Evaluation for Video Understanding},
+  author={Jahagirdar, Soumya Shamarao and Kukleva, Anna and Udandarao, Vishaal and Thomas, Samuel and Kingsbury, Brian and Feris, Rogerio and Glass, James R. and Prabhu, Ameya and Kuehne, Hilde},
+  year={2026},
+  note={Preprint}
+}
 ```
-
-One model, one task, one knob at a time (base: 4 frames, hf, batch 1, seed 22):
-
-| exp | varies | tells you |
-|---|---|---|
-| exp1 | hf vs vLLM (frames 4-128, 3 seeds) | whether the backend changes answers |
-| exp2 | batch size 1-32 | whether batching is score-neutral |
-| exp3 / exp3a | decoder (decord, torchvision, torchcodec) / random frame positions | whether the decoder or the sampled positions matter |
-| exp4 | 1 fps capped vs uniform at the same count | frame selection |
-| exp5 | 4-128 frames | accuracy vs frame budget |
-| exp6 | pixels per frame (InternVL: tiles) | accuracy vs resolution |
-| exp7 | `.mp4` vs the same frames as JPEGs | decoder + video-processor path vs the model |
-| exp8 | temperature 0.7-1.0, 3 seeds | sampling sensitivity |
-
-Knobs a family's wrapper cannot vary are skipped with a printed reason. Grids are environment
-variables (`NFRAMES`, `SEEDS`, `MAX_PIXELS`, ...), listed in the script header.
-
-## Experiment 2: frame-budget protocol
-
-```bash
-bash eval_scripts/sweep_frames.sh --model qwen25vl_7b                       # TASKS default: videomme mvbench tempcompass_multi_choice vsibench mmvu_val
-TASKS="videomme metav" bash eval_scripts/sweep_frames.sh --model internvl35_8b
-```
-
-exp5 (raw `.mp4`) and exp7 (pre-extracted frames) at 4, 8, 16, 32, 64, 128 frames on the hf backend,
-one seed, for every task in `TASKS`. Gives the accuracy-vs-frames curve of a model and, per frame
-count, the gap between the wrapper's video path and plain frames. GLM and Gemma get exp7 only.
-
-## Precomputed frames (needed by exp7)
-
-```bash
-python eval_scripts/make_frames_task.py --task videomme            # hours for long benchmarks; use a batch job, --workers N
-python eval_scripts/make_frames_task.py --task metav
-python eval_scripts/make_frames_task.py --task vsibench --limit 3   # smoke test
-```
-
-For a task `T` (or a group) this extracts 128 uniform frames per video into `data/frames/videos/`,
-writes `data/frames/T_frames<N>.parquet` for N = 4 ... 128, and creates the tasks `T_frames<N>`
-next to `T`'s YAML (same prompt and metric, frames instead of the video). `data/frames/` is
-gitignored; regenerate it on a new machine. Both sweeps pick the variants up automatically.
-
-## Experiment 3: the vLLM video fix
-
-```bash
-bash eval_scripts/sweep_vllm_fix.sh --model Qwen/Qwen2.5-VL-7B-Instruct --task metav
-```
-
-Stock vLLM sends a video as N separate images; the `vllm_fix` plugin sends the real video (see
-FIXES.md). Runs hf (reference), stock vLLM and `vllm_fix` at `NFRAMES` (default 4) over batch sizes
-1-32 and seeds 22, 42, 72. Compare `vllm` vs `vllm_fix` for the size of the artefact and both vs `hf`.
-Qwen2.5-VL only.
-
-## Results
-
-```bash
-python eval_scripts/collect_results.py                    # one table per sweep / task / model / experiment
-python eval_scripts/collect_results.py --csv runs.csv
-```
-
-Single runs without a sweep: call a runner in `eval_scripts/runners/` directly, e.g.
-`bash eval_scripts/runners/run_video_qa_hf_multigpu.sh --tasks videomme --nframes 8 --limit 50`
-(`--help` lists the flags).

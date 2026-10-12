@@ -1,0 +1,49 @@
+# Every setting of one standardized video evaluation. Run it with
+#   python eval_scripts/run_eval.py configs/example.yaml [--dry_run]
+# A value left out (or null) takes the default shown here. Keys marked TOGGLE may be a list:
+# the script runs the grid of all combinations. All other keys are fixed for the whole grid.
+
+# ---- toggles ------------------------------------------------------------------------------
+tasks: metav             # TOGGLE  any in-tree video task or group (see DATASETS.md): metav, videomme, mvbench, ...
+model: qwen25vl_7b       # TOGGLE  HF id or alias (see MODELS.md): qwen25vl_7b, qwen3vl_8b, qwen35_9b, internvl35_8b, glm46v_flash, gemma3_12b
+nframes: 32              # TOGGLE  frames per video (uniform sampling), or the cap in fps mode
+backend: hf              # TOGGLE  hf | vllm | hf_tiled (InternVL only)
+vllm_fix: false          # TOGGLE  backend vllm only: forward the .mp4 to vLLM (one video) instead of N separate images; Qwen2.5-VL only
+
+# ---- what the model sees --------------------------------------------------------------------
+input: video             # video = the .mp4, the wrapper samples the frames | frames = <task>_frames<N> (pre-extracted JPEGs, eval_scripts/make_frames_task.py)
+frame_sampling: uniform  # uniform = exactly `nframes` frames | fps = `fps` frames per second, capped at `max_frames`
+fps: 1
+max_frames: null         # fps mode only; null = nframes
+frame_sampler: uniform   # which positions out of the decoded frames: uniform | random (Qwen2.5-VL hf only, seeded)
+video_reader: torchcodec # decord | torchvision | torchcodec   (which library decodes the frames; they do not pick identical frames)
+max_pixels: null         # per-frame pixel budget; null = family protocol value (Qwen2.5-VL 602112, Qwen3-VL 524288, Qwen3.5 131072, GLM 401408)
+min_pixels: null
+max_patches: 1           # InternVL only: 448x448 tiles per frame (hf_tiled / vllm)
+min_patches: 1
+
+# ---- runtime --------------------------------------------------------------------------------
+batch_size: 1
+batch_invariant: false   # vllm only: VLLM_BATCH_INVARIANT=1 (needs vllm >= 0.11.1)
+num_gpus: 1              # data-parallel replicas (one model copy per GPU)
+tensor_parallel_size: 1  # vllm: split one replica over N GPUs
+gpu_memory_utilization: 0.9
+max_model_len: 32768
+max_num_seqs: 8
+env: null                # bin dir of the environment to run in, e.g. /path/to/conda/envs/lmms_eval/bin; null = current
+attn: null               # hf: sdpa | flash_attention_2 | eager
+
+# ---- decoding -------------------------------------------------------------------------------
+temperature: null        # null = the task yaml's generation_kwargs (0 for every MCQ task here)
+max_new_tokens: null     # null = the task yaml's generation_kwargs
+enable_thinking: false   # Qwen3.5 (and Qwen3-VL thinking checkpoints)
+seed: 22
+prompt: {}               # metav only: {variant: default|qwen3_vl, post_prompt: "...", option_style: "...", layout: vt|tvt|vtv}
+
+# ---- bookkeeping ----------------------------------------------------------------------------
+name: null               # run-set name; null = this file's name. Results: <output_root>/<name>/<task>/<model>/<run tag>/
+output_root: logs/runs
+resume: true             # skip a run dir that already holds a *_results.json
+limit: null              # int, or a 0-1 fraction, for smoke tests
+include_path: null       # extra task YAML directory
+extra_model_args: null   # appended to --model_args verbatim (Qwen2.5-VL hf only), e.g. interleave_visuals=True
