@@ -113,7 +113,9 @@ def resolve_model(m):
         return f"OpenGVLab/InternVL3_5-{size.upper().replace('_', '-')}-HF"
     if low.startswith("internvl3_"):
         return f"OpenGVLab/InternVL3-{size.upper().replace('_', '-')}-hf"
-    return {"glm46v_flash": "zai-org/GLM-4.6V-Flash", "glm46v": "zai-org/GLM-4.6V", "glm45v": "zai-org/GLM-4.5V", "glm41v_9b": "zai-org/GLM-4.1V-9B-Thinking"}.get(low) or (f"google/gemma-3-{size[:-1]}b-it" if re.fullmatch(r"gemma3_\d+b", low) else m)
+    return {"glm46v_flash": "zai-org/GLM-4.6V-Flash", "glm46v": "zai-org/GLM-4.6V", "glm45v": "zai-org/GLM-4.5V", "glm41v_9b": "zai-org/GLM-4.1V-9B-Thinking"}.get(low) or (
+        f"google/gemma-3-{size[:-1]}b-it" if re.fullmatch(r"gemma3_\d+b", low) else m
+    )
 
 
 def detect_family(hf_id):
@@ -292,7 +294,24 @@ class Run:
     def command(self):
         c, f, b = self.cfg, self.fam, self.backend
         runner = os.path.join(RUNNERS, "run_video_qa_vllm_fix.sh" if self.vllm_fix else FAM[f][0])
-        a = ["bash", runner, "--model", self.model, "--tasks", self.task, "--batch_size", str(c["batch_size"]), "--seed", str(c["seed"]), "--output_root", os.path.dirname(self.run_dir), "--run_tag", self.tag, "--num_gpus", str(c["num_gpus"])]
+        a = [
+            "bash",
+            runner,
+            "--model",
+            self.model,
+            "--tasks",
+            self.task,
+            "--batch_size",
+            str(c["batch_size"]),
+            "--seed",
+            str(c["seed"]),
+            "--output_root",
+            os.path.dirname(self.run_dir),
+            "--run_tag",
+            self.tag,
+            "--num_gpus",
+            str(c["num_gpus"]),
+        ]
         # frames
         if c["frame_sampling"] == "fps":
             a += ["--fps", str(c["fps"]), "--max_frames", str(c["max_frames"] or self.nframes)]
@@ -316,7 +335,18 @@ class Run:
         if f == "qwen35" or (f == "qwen3vl" and c["enable_thinking"]):
             a += ["--enable_thinking", "true" if c["enable_thinking"] else "false"]
         if b == "vllm" or self.vllm_fix:
-            a += ["--batch_invariant", "1" if self.bi else "0", "--tensor_parallel_size", str(c["tensor_parallel_size"]), "--gpu_memory_utilization", str(c["gpu_memory_utilization"]), "--max_model_len", str(c["max_model_len"]), "--max_num_seqs", str(c["max_num_seqs"])]
+            a += [
+                "--batch_invariant",
+                "1" if self.bi else "0",
+                "--tensor_parallel_size",
+                str(c["tensor_parallel_size"]),
+                "--gpu_memory_utilization",
+                str(c["gpu_memory_utilization"]),
+                "--max_model_len",
+                str(c["max_model_len"]),
+                "--max_num_seqs",
+                str(c["max_num_seqs"]),
+            ]
         for key, flag in [("temperature", "--temperature"), ("max_new_tokens", "--max_new_tokens"), ("limit", "--limit"), ("attn", "--attn"), ("include_path", "--include_path")]:
             if c[key] is not None and not (key == "attn" and (b == "vllm" or self.vllm_fix)):
                 a += [flag, str(c[key])]
@@ -341,7 +371,15 @@ class Run:
         rows = [
             ("Scope", "Model", f"{self.model} (family {self.fam}, lmms_eval model `{self.lmms_model}`)"),
             ("", "Task", self.task),
-            ("Runtime", "Inference backend", ("vLLM, video forwarded as .mp4 (vllm_fix plugin)" if self.vllm_fix else "vLLM, frames sent as images" if self.backend == "vllm" else "HF transformers" + (" (InternVL image tiler per frame)" if self.backend == "hf_tiled" else ""))),
+            (
+                "Runtime",
+                "Inference backend",
+                (
+                    "vLLM, video forwarded as .mp4 (vllm_fix plugin)"
+                    if self.vllm_fix
+                    else "vLLM, frames sent as images" if self.backend == "vllm" else "HF transformers" + (" (InternVL image tiler per frame)" if self.backend == "hf_tiled" else "")
+                ),
+            ),
             ("", "Batch size", str(c["batch_size"])),
             ("", "Batch invariant", str(self.bi) + ("" if self.backend == "vllm" else " (vLLM mode; n/a on hf)")),
             ("", "GPUs", f"{c['num_gpus']} (tensor parallel {c['tensor_parallel_size']})" if self.backend == "vllm" else str(c["num_gpus"])),
@@ -349,7 +387,15 @@ class Run:
             ("Input", "Input modality", ".mp4 video" if c["input"] == "video" else "pre-extracted JPEG frames"),
             ("", "Frames", self.sample_desc),
             ("", "Video decoder", c["video_reader"] if (fam_has(self.fam, "video_reader") or self.backend in ("vllm", "hf_tiled")) and not self.vllm_fix else "the wrapper's own" + (" (torchcodec, server side)" if self.vllm_fix else "")),
-            ("", "Frame resolution", (f"max_pixels {self.max_pixels}" + (f", min_pixels {c['min_pixels']}" if c["min_pixels"] else "")) if fam_has(self.fam, "max_pixels") else (f"{c['max_patches']} tile(s) of 448x448 per frame" if self.fam == "internvl" else "fixed by the wrapper")),
+            (
+                "",
+                "Frame resolution",
+                (
+                    (f"max_pixels {self.max_pixels}" + (f", min_pixels {c['min_pixels']}" if c["min_pixels"] else ""))
+                    if fam_has(self.fam, "max_pixels")
+                    else (f"{c['max_patches']} tile(s) of 448x448 per frame" if self.fam == "internvl" else "fixed by the wrapper")
+                ),
+            ),
             ("", "Tokens per frame", FAM[self.fam][2]),
             ("Decoding", "Temperature", str(c["temperature"]) if c["temperature"] is not None else "task yaml (0 for the MCQ tasks)"),
             ("", "Max new tokens", str(c["max_new_tokens"]) if c["max_new_tokens"] is not None else "task yaml"),
@@ -364,7 +410,22 @@ class Run:
 
     def config_json(self, cmd):
         c = self.cfg
-        d = {"model": self.model, "family": self.fam, "runner": os.path.basename(cmd[1]), "env": c["env"] or "", "exp": c["name"], "task": self.task, "backend": "vllm_fix" if self.vllm_fix else self.backend, "nframes": self.nframes, "batch_size": c["batch_size"], "seed": c["seed"], "video_reader": c["video_reader"], "frame_sampler": c["frame_sampler"], "batch_invariant": int(self.bi), "input": c["input"]}
+        d = {
+            "model": self.model,
+            "family": self.fam,
+            "runner": os.path.basename(cmd[1]),
+            "env": c["env"] or "",
+            "exp": c["name"],
+            "task": self.task,
+            "backend": "vllm_fix" if self.vllm_fix else self.backend,
+            "nframes": self.nframes,
+            "batch_size": c["batch_size"],
+            "seed": c["seed"],
+            "video_reader": c["video_reader"],
+            "frame_sampler": c["frame_sampler"],
+            "batch_invariant": int(self.bi),
+            "input": c["input"],
+        }
         if c["frame_sampling"] == "fps":
             d.update(fps=c["fps"], max_frames=c["max_frames"] or self.nframes)
         if fam_has(self.fam, "max_pixels"):
